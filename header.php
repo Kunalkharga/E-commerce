@@ -60,3 +60,16 @@
       </div>
     </div>
   </nav>
+
+  <div class="nav-icons">
+  <?php if(isset($_SESSION['user_id'])): ?>
+    <a href="profile.php"><i class="fas fa-user"></i></a>
+    <?php if($_SESSION['role'] === 'admin'): ?>
+      <a href="admin/"><i class="fas fa-cog"></i></a>
+    <?php endif; ?>
+    <a href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
+  <?php else: ?>
+    <a href="login.php"><i class="fas fa-sign-in-alt"></i></a>
+  <?php endif; ?>
+  <!-- Other icons -->
+</div>
