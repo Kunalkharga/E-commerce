@@ -16,7 +16,7 @@
       <div class="navbar">
         <!-- Logo -->
         <a href="#" class="logo">
-          <img src="logo2.png" alt="Doggesh Logo" class="logo-img">
+          <img src="images/logo2.png" alt="Doggesh Logo" class="logo-img">
           <span class="logo-text">Doggesh</span>
         </a>
 
@@ -74,7 +74,7 @@
     </div>
     
     <div class="hero-image">
-      <img src="Home-dog2.png" alt="Happy Dog">
+      <img src="images/Home-dog2.png" alt="Happy Dog">
     </div>
   </div>
 </section>
@@ -159,22 +159,22 @@
     </h2>
     <div class="brands-grid">
     <div class="brand-item">
-      <img src="brand4.png" alt="drools">
+      <img src="images/brand4.png" alt="drools">
     </div>
     <div class="brand-item">
-      <img src="brand6.webp" alt="jungle">
+      <img src="images/brand6.webp" alt="jungle">
     </div>
       <div class="brand-item">
-        <img src="brand1.webp" alt="Gerry pet">
+        <img src="images/brand1.webp" alt="Gerry pet">
       </div>
       <div class="brand-item">
-        <img src="brand2.png" alt="Ckaniva">
+        <img src="images/brand2.png" alt="Ckaniva">
       </div>
       <div class="brand-item">
-        <img src="brand3.png" alt="Bonacibo">
+        <img src="images/brand3.png" alt="Bonacibo">
       </div>
       <div class="brand-item">
-        <img src="brand5.webp" alt="haseinper">
+        <img src="images/brand5.webp" alt="haseinper">
       </div>
     </div>
   </div>
@@ -189,7 +189,7 @@
         <div class="footer-column">
           <div class="footer-logo-container">
             <a href="#" class="logo">
-              <img src="logo2.png" alt="Doggesh Logo" class="logo-img">
+              <img src="images/logo2.png" alt="Doggesh Logo" class="logo-img">
               <h3 class="logo-title">Doggesh</h3>
             </a>
           </div>
