@@ -42,14 +42,23 @@
           <li><a href="#">Contact</a></li>
         </ul>
 
-        <div class="nav-icons">
-          <i class="fas fa-search"></i>
-          <i class="fas fa-shopping-cart"></i>
-          <i class="fas fa-user"></i>
-          <div class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-          </div>
-        </div>
+        <!-- Fix duplicate nav-icons section -->
+<div class="nav-icons">
+  <i class="fas fa-search"></i>
+  <i class="fas fa-shopping-cart"></i>
+  <?php if(isset($_SESSION['user_id'])): ?>
+    <a href="profile.php"><i class="fas fa-user"></i></a>
+    <?php if($_SESSION['role'] === 'admin'): ?>
+      <a href="admin/"><i class="fas fa-cog"></i></a>
+    <?php endif; ?>
+    <a href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
+  <?php else: ?>
+    <a href="login.php"><i class="fas fa-sign-in-alt"></i></a>
+  <?php endif; ?>
+  <div class="mobile-menu-btn">
+    <i class="fas fa-bars"></i>
+  </div>
+</div>
         <div class="search-container">
           <div class="search-box">
             <input type="text" placeholder="Search for products...">
@@ -60,16 +69,3 @@
       </div>
     </div>
   </nav>
-
-  <div class="nav-icons">
-  <?php if(isset($_SESSION['user_id'])): ?>
-    <a href="profile.php"><i class="fas fa-user"></i></a>
-    <?php if($_SESSION['role'] === 'admin'): ?>
-      <a href="admin/"><i class="fas fa-cog"></i></a>
-    <?php endif; ?>
-    <a href="logout.php"><i class="fas fa-sign-out-alt"></i></a>
-  <?php else: ?>
-    <a href="login.php"><i class="fas fa-sign-in-alt"></i></a>
-  <?php endif; ?>
-  <!-- Other icons -->
-</div>

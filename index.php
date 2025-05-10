@@ -44,7 +44,7 @@
         <div class="category-icon">
           <i class="fas fa-pills"></i>
         </div>
-        <h3>HDog Health</h3>
+        <h3>Dog Health</h3>
         <p>Keep your pet healthy and happy</p>
         <a href="#" class="btn">Shop Now</a>
       </div>
