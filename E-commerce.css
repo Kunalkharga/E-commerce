@@ -1484,7 +1484,7 @@ footer {
 
 .value-card {
   flex: 1;
-  background-color: #ffffff;
+  background-color: white;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
