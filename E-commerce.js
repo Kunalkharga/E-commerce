@@ -219,3 +219,68 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 });
+
+
+        // About Page-specific JavaScript can go here
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation for stats counting
+            const stats = document.querySelectorAll('.stat span');
+            stats.forEach(stat => {
+                const target = +stat.innerText.replace('+', '');
+                const increment = target / 30;
+                let current = 0;
+                
+                const updateStat = () => {
+                    if (current < target) {
+                        stat.innerText = Math.ceil(current) + (stat.innerText.includes('+') ? '+' : '');
+                        current += increment;
+                        setTimeout(updateStat, 30);
+                    } else {
+                        stat.innerText = target + (stat.innerText.includes('+') ? '+' : '');
+                    }
+                };
+                
+                updateStat();
+            });
+        });
+    
+
+
+
+
+
+           // Contact form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
