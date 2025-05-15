@@ -1,5 +1,7 @@
 # Doggesh - Premium Pet Supplies E-commerce Website
 ![alt text](images/logo2.png)
+
+
 A complete e-commerce platform for pet supplies with user authentication, product catalog, shopping cart, and more.
 
 ## Features
