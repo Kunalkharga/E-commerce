@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Handle window resize
   window.addEventListener('resize', function () {
     if (window.innerWidth > 768) {
-      // Reset all dropdowns when switching to desktop
+      
       document.querySelectorAll('.dropdown').forEach(item => {
         item.classList.remove('active');
       });
