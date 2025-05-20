@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doggy - Premium Pet Supplies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="E-commerce.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="container">
+            <div class="navbar">
+                <a href="E-commerce.html" class="logo">
+                    <img src="images/logo2.png" alt="Doggesh Logo" class="logo-img">
+                    <span class="logo-text">Doggy</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="E-commerce.html">Home</a></li>
+                    <!-- Products Dropdown -->
+                    <li class="dropdown">
+                        <a href="products.html" class="dropdown-toggle">Products <i
+                                class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="food&nutritions.html">Food & Nutrition</a></li>
+                            <li><a href="dog-aaccessories.html">Dog Accessories</a></li>
+                            <li><a href="doghealth.html">Dog Health</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="calculator.html">Calculator</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+                <div class="search-container">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search for products...">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+
+                <div class="nav-icons">
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-user"></i>
+                    <div class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Everything Your Dog Deserves – Delivered to Your Door!</h1>
+                <p>Discover the finest selection of pet food and accessories for your furry friends. Quality products at
+                    affordable prices with fast delivery.</p>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+
+            <div class="hero-image">
+                <img src="images/Home-dog2.png" alt="Happy Dog">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="container">
+        <h2 class="section-title">Top Categories</h2>
+        <div class="categories">
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-bone"></i>
+                </div>
+                <h3>Food & Nutrition</h3>
+                <p>Premium nutrition for your canine companion</p>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-paw"></i>
+                </div>
+                <h3>Dog Accessories</h3>
+                <p>Everything your pet needs for a happy life</p>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-pills"></i>
+                </div>
+                <h3>Dog Health</h3>
+                <p>Keep your pet healthy and happy</p>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="container">
+        <h2 class="section-title">Best Sellers</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-badge">Hot</div>
+                <img src="images/product1.jpg" alt="Premium Dog Food" class="product-image">
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(24)</span>
+                </div>
+                <h3 class="product-name">Premium Dog Food 5kg</h3>
+                <div class="product-price">$29.99 <span class="old-price">$34.99</span></div>
+
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <input type="number" value="1" min="1" max="99" class="quantity-input" readonly>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/product2.jpg" alt="Chew Toy" class="product-image">
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>(18)</span>
+                </div>
+                <h3 class="product-name">Durable Chew Toy</h3>
+                <div class="product-price">$12.99</div>
+
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <input type="number" value="1" min="1" max="99" class="quantity-input" readonly>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-badge">New</div>
+                <img src="images/product4.png" alt="Dog Bed" class="product-image">
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(42)</span>
+                </div>
+                <h3 class="product-name">Orthopedic Dog Bed</h3>
+                <div class="product-price">$49.99</div>
+
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <input type="number" value="1" min="1" max="99" class="quantity-input" readonly>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/product4.jpg" alt="Dog Leash" class="product-image">
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(31)</span>
+                </div>
+                <h3 class="product-name">Premium Dog Leash</h3>
+                <div class="product-price">$15.99 <span class="old-price">$19.99</span></div>
+
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <input type="number" value="1" min="1" max="99" class="quantity-input" readonly>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="images/product5.jpg" alt="Dog Shampoo" class="product-image">
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>(15)</span>
+                </div>
+                <h3 class="product-name">Organic Dog Shampoo</h3>
+                <div class="product-price">$9.99</div>
+
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <input type="number" value="1" min="1" max="99" class="quantity-input" readonly>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-badge">Sale</div>
+                <img src="images/product6.jpg" alt="Dog Collar" class="product-image">
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(27)</span>
+                </div>
+                <h3 class="product-name">LED Dog Collar</h3>
+                <div class="product-price">$14.99 <span class="old-price">$24.99</span></div>
+
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <input type="number" value="1" min="1" max="99" class="quantity-input" readonly>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/product7.jpg" alt="Dog Bowl" class="product-image">
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <i class="far fa-star"></i>
+                    <span>(12)</span>
+                </div>
+                <h3 class="product-name">Stainless Steel Dog Bowl</h3>
+                <div class="product-price">$8.99</div>
+
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <input type="number" value="1" min="1" max="99" class="quantity-input" readonly>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-badge">Popular</div>
+                <img src="images/product8.jpg" alt="Dog Treats" class="product-image">
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(36)</span>
+                </div>
+                <h3 class="product-name">Grain-Free Dog Treats</h3>
+                <div class="product-price">$7.99</div>
+
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <input type="number" value="1" min="1" max="99" class="quantity-input" readonly>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container">
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-truck"></i>
+                <h3>Instant Delivery</h3>
+                <p>In Mirpur and Surrounding Areas From 10am-8pm</p>
+            </div>
+
+            <div class="feature">
+                <i class="fas fa-tag"></i>
+                <h3>Best Price</h3>
+                <p>PetPapa offers best possible pricing in market.</p>
+            </div>
+
+            <div class="feature">
+                <i class="fas fa-lock"></i>
+                <h3>Secure Payment</h3>
+                <p>Your payment is 100% secure with PetPapa most locations.</p>
+            </div>
+
+            <div class="feature">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Our dedicated support team is available 7 days a week!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Brands Section -->
+    <section class="popular-brands">
+        <div class="container-full">
+            <h2 class="section-title">
+                <span class="popular-text">Popular</span> <span class="brands-text">Brands</span>
+            </h2>
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <img src="images/brand4.png" alt="drools">
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand6.webp" alt="jungle">
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand1.webp" alt="Gerry pet">
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand2.png" alt="Ckaniva">
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand3.png" alt="Bonacibo">
+                </div>
+                <div class="brand-item">
+                    <img src="images/brand5.webp" alt="haseinper">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo-container">
+                        <a href="#" class="logo">
+                            <img src="images/logo2.png" alt="Doggesh Logo" class="logo-img">
+                            <h3 class="logo-title">Doggy</h3>
+                        </a>
+                    </div>
+                    <p>Discover the finest selection of pet food and accessories for your furry friends</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Calculator</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Dog Food & Nutrition</li>
+                        <li><a href="#">Dog Accessories</a></li>
+                        <li><a href="#">Dog Toys</a></li>
+                        <li><a href="#">Dog Health</a></li>
+                        <li><a href="#">Dog Beds & Comfort</a></li>
+                        <li><a href="#">Tech & Gadgets</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
+                        <li><i class="fas fa-phone"></i> +977 9845617820</li>
+                        <li><i class="fas fa-envelope"></i> info@doggesh.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Doggy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="E-commerce.js"></script>
+</body>
+
+</html>

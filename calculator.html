@@ -1,0 +1,142 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ 
+     <head>
+        <!-- Same as your e-commerce.html head section -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dog Age Calculator | Doggy</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="E-commerce.css">
+    </head>
+ <body>
+    <!-- Navbar -->
+    <nav>
+        <div class="container">
+            <div class="navbar">
+                <a href="E-commerce.html" class="logo">
+                    <img src="images/logo2.png" alt="Doggy Logo" class="logo-img">
+                    <span class="logo-text">Doggy</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="E-commerce.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="calculator.html">Calculator</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-user"></i>
+                    <div class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<section class="calculator-section">
+    <div class="calculator-container">
+        <div class="calculator-header">
+            <img src="images/dog-calculator.png" alt="Cute Dog" class="calculator-dog">
+            <h2>Dog Age Calculator</h2>
+            <p>Find out how old your dog is in human years!</p>
+        </div>
+        
+        <div class="calculator-form">
+            <div class="form-group">
+                <label for="dog-age">Dog's Age:</label>
+                <input type="number" id="dog-age" min="1" max="30" placeholder="Enter age in years">
+            </div>
+            
+            <div class="form-group">
+                <label for="dog-size">Dog Size:</label>
+                <select id="dog-size">
+                    <option value="small">Small (0-20 lbs)</option>
+                    <option value="medium">Medium (21-50 lbs)</option>
+                    <option value="large">Large (51-90 lbs)</option>
+                    <option value="giant">Giant (90+ lbs)</option>
+                </select>
+            </div>
+            
+            <button id="calculate-btn" class="calculator-btn">Calculate Age</button>
+            
+            <div class="result-container" id="result-container">
+                <div id="result" class="result-box"></div>
+            </div>
+        </div>
+    </div>
+    <div class="back-to-home">
+    <a href="E-commerce.html" class="btn">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+</div>
+</section>
+
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo-container">
+                        <a href="#" class="logo">
+                            <img src="images/logo2.png" alt="Doggy Logo" class="logo-img">
+                            <h3 class="logo-title">Doggy</h3>
+                        </a>
+                    </div>
+                    <p>Discover the finest selection of pet food and accessories for your furry friends</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Calculator</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Dog Food & Nutrition</li>
+                        <li><a href="#">Dog Accessories</a></li>
+                        <li><a href="#">Dog Toys</a></li>
+                        <li><a href="#">Dog Health</a></li>
+                        <li><a href="#">Dog Beds & Comfort</a></li>
+                        <li><a href="#">Tech & Gadgets</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</li>
+                        <li><i class="fas fa-phone"></i> +977 9845617820</li>
+                        <li><i class="fas fa-envelope"></i> info@Doggy.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Doggy. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+<script src="E-commerce.js"></script>
+    </body>
+ </html>
