@@ -1,6 +1,6 @@
 <?php 
 $pageTitle = "Doggy - Premium Pet Supplies";
-include 'includes/header.php'; 
+include 'includes/header.php';
 ?>
 
 <!-- Hero Section -->
