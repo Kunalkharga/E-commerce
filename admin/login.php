@@ -1,54 +1,53 @@
 <?php
+require_once '../includes/db_connect.php';
 session_start();
-include '../includes/db.php';
-include '../includes/auth.php';
 
-if (isLoggedIn() && isAdmin()) {
-    header('Location: dashboard.php');
-    exit;
-}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ? AND is_admin = 1");
-    $stmt->execute([$username]);
-    $user = $stmt->fetch();
-    
-    if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['is_admin'] = true;
-        header('Location: dashboard.php');
-        exit;
-    } else {
-        $error = "Invalid username or password";
+    try {
+        $stmt = $pdo->prepare("SELECT * FROM admins WHERE email = ?");
+        $stmt->execute([$email]);
+        $admin = $stmt->fetch();
+
+        if ($admin && password_verify($password, $admin['password'])) {
+            $_SESSION['admin_id'] = $admin['id'];
+            header("Location: dashboard.php");
+            exit;
+        } else {
+            $error = "Invalid email or password";
+        }
+    } catch (PDOException $e) {
+        $error = "Login failed: " . $e->getMessage();
     }
 }
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Admin Login</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Doggy</title>
+    <link rel="stylesheet" href="../assets/css/e-commerce.css">
 </head>
 <body>
-    <div class="admin-login-container">
-        <h1>Admin Login</h1>
+    <div class="container">
+        <h2>Admin Login</h2>
         <?php if (isset($error)): ?>
-            <div class="alert alert-danger"><?php echo $error; ?></div>
+            <p style="color: red;"><?php echo $error; ?></p>
         <?php endif; ?>
-        <form method="POST">
+        <form method="POST" class="contact-form">
             <div class="form-group">
-                <label>Username</label>
-                <input type="text" name="username" required>
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" required>
             </div>
             <div class="form-group">
-                <label>Password</label>
-                <input type="password" name="password" required>
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" required>
             </div>
-            <button type="submit" class="btn">Login</button>
+            <button type="submit" class="btn-submit">Login</button>
         </form>
     </div>
 </body>
