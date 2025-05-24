@@ -12,7 +12,8 @@ $products = $stmt->fetchAll();
     <div class="container">
         <div class="hero-content">
             <h1>Everything Your Dog Deserves – Delivered to Your Door!</h1>
-            <p>Discover the finest selection of pet food and accessories for your furry friends. Quality products at affordable prices with fast delivery.</p>
+            <p>Discover the finest selection of pet food and accessories for your furry friends. Quality products at
+                affordable prices with fast delivery.</p>
             <a href="products.php" class="btn">Shop Now</a>
         </div>
         <div class="hero-image">
@@ -20,51 +21,52 @@ $products = $stmt->fetchAll();
         </div>
     </div>
 </section>
- <!-- Categories Section -->
-    <section class="container">
-        <h2 class="section-title">Top Categories</h2>
-        <div class="categories">
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-bone"></i>
-                </div>
-                <h3>Food & Nutrition</h3>
-                <p>Premium nutrition for your canine companion</p>
-                <a href="food&nutritions.html" class="btn">Shop Now</a>
+<!-- Categories Section -->
+<section class="container">
+    <h2 class="section-title">Top Categories</h2>
+    <div class="categories">
+        <div class="category-card">
+            <div class="category-icon">
+                <i class="fas fa-bone"></i>
             </div>
-
-
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-paw"></i>
-                </div>
-                <h3>Dog Accessories</h3>
-                <p>Everything your pet needs for a happy life</p>
-                <a href="dog-aaccessories.html" class="btn">Shop Now</a>
-            </div>
-
-            <div class="category-card">
-                <div class="category-icon">
-                    <i class="fas fa-pills"></i>
-                </div>
-                <h3>Dog Health</h3>
-                <p>Keep your pet healthy and happy</p>
-                <a href="doghealth.html" class="btn">Shop Now</a>
-            </div>
-
+            <h3>Food & Nutrition</h3>
+            <p>Premium nutrition for your canine companion</p>
+            <a href="food&nutritions.html" class="btn">Shop Now</a>
         </div>
-    </section>
 
-<section class="best-sellers">
+
+        <div class="category-card">
+            <div class="category-icon">
+                <i class="fas fa-paw"></i>
+            </div>
+            <h3>Dog Accessories</h3>
+            <p>Everything your pet needs for a happy life</p>
+            <a href="dog-aaccessories.html" class="btn">Shop Now</a>
+        </div>
+
+        <div class="category-card">
+            <div class="category-icon">
+                <i class="fas fa-pills"></i>
+            </div>
+            <h3>Dog Health</h3>
+            <p>Keep your pet healthy and happy</p>
+            <a href="doghealth.html" class="btn">Shop Now</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="container">
     <h2 class="section-title">Best Sellers</h2>
-    <div class="container">
+    <!-- <div class="container"> -->
         <div class="products-grid">
             <?php foreach ($products as $product): ?>
                 <div class="product-card">
                     <?php if ($product['badge']): ?>
                         <span class="product-badge"><?php echo htmlspecialchars($product['badge']); ?></span>
                     <?php endif; ?>
-                    <img src="<?php echo BASE_URL; ?>assets/images/product-images/<?php echo $product['image']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" class="product-image">
+                    <img src="<?php echo BASE_URL; ?>assets/images/product-images/<?php echo $product['image']; ?>"
+                        alt="<?php echo htmlspecialchars($product['name']); ?>" class="product-image">
                     <div class="product-rating">
                         <?php for ($i = 0; $i < 5; $i++): ?>
                             <i class="fas fa-star <?php echo $i < $product['rating'] ? '' : 'far'; ?>"></i>
@@ -87,65 +89,65 @@ $products = $stmt->fetchAll();
                 </div>
             <?php endforeach; ?>
         </div>
+    <!-- </div> -->
+</section>
+<!-- Features Section -->
+<section class="container">
+    <div class="features">
+        <div class="feature">
+            <i class="fas fa-truck"></i>
+            <h3>Instant Delivery</h3>
+            <p>In Mirpur and Surrounding Areas From 10am-8pm</p>
+        </div>
+
+        <div class="feature">
+            <i class="fas fa-tag"></i>
+            <h3>Best Price</h3>
+            <p>PetPapa offers best possible pricing in market.</p>
+        </div>
+
+        <div class="feature">
+            <i class="fas fa-lock"></i>
+            <h3>Secure Payment</h3>
+            <p>Your payment is 100% secure with PetPapa most locations.</p>
+        </div>
+
+        <div class="feature">
+            <i class="fas fa-headset"></i>
+            <h3>24/7 Support</h3>
+            <p>Our dedicated support team is available 7 days a week!</p>
+        </div>
     </div>
 </section>
- <!-- Features Section -->
-    <section class="container">
-        <div class="features">
-            <div class="feature">
-                <i class="fas fa-truck"></i>
-                <h3>Instant Delivery</h3>
-                <p>In Mirpur and Surrounding Areas From 10am-8pm</p>
-            </div>
 
-            <div class="feature">
-                <i class="fas fa-tag"></i>
-                <h3>Best Price</h3>
-                <p>PetPapa offers best possible pricing in market.</p>
+<!-- Popular Brands Section -->
+<section class="popular-brands">
+    <div class="container-full">
+        <h2 class="section-title">
+            <span class="popular-text">Popular</span> <span class="brands-text">Brands</span>
+        </h2>
+        <div class="brands-grid">
+            <div class="brand-item">
+                <img src="assets/images/brand2.png" alt="drools">
             </div>
-
-            <div class="feature">
-                <i class="fas fa-lock"></i>
-                <h3>Secure Payment</h3>
-                <p>Your payment is 100% secure with PetPapa most locations.</p>
+            <div class="brand-item">
+                <img src="assets/images/brand6.webp" alt="jungle">
             </div>
-
-            <div class="feature">
-                <i class="fas fa-headset"></i>
-                <h3>24/7 Support</h3>
-                <p>Our dedicated support team is available 7 days a week!</p>
+            <div class="brand-item">
+                <img src="assets/images/brand1.webp" alt="Gerry pet">
+            </div>
+            <div class="brand-item">
+                <img src="assets/images/brand3.png" alt="Ckaniva">
+            </div>
+            <div class="brand-item">
+                <img src="assets/images/brand4.png" alt="Bonacibo">
+            </div>
+            <div class="brand-item">
+                <img src="assets/images/brand5.webp" alt="haseinper">
             </div>
         </div>
-    </section>
-
-     <!-- Popular Brands Section -->
-    <section class="popular-brands">
-        <div class="container-full">
-            <h2 class="section-title">
-                <span class="popular-text">Popular</span> <span class="brands-text">Brands</span>
-            </h2>
-            <div class="brands-grid">
-                <div class="brand-item">
-                    <img src="assets/images/brand2.png" alt="drools">
-                </div>
-                <div class="brand-item">
-                    <img src="assets/images/brand6.webp" alt="jungle">
-                </div>
-                <div class="brand-item">
-                    <img src="assets/images/brand1.webp" alt="Gerry pet">
-                </div>
-                <div class="brand-item">
-                    <img src="assets/images/brand3.png" alt="Ckaniva">
-                </div>
-                <div class="brand-item">
-                    <img src="assets/images/brand4.png" alt="Bonacibo">
-                </div>
-                <div class="brand-item">
-                    <img src="assets/images/brand5.webp" alt="haseinper">
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
 
 <?php include 'includes/footer.php'; ?>
