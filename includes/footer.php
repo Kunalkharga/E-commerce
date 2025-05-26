@@ -29,9 +29,6 @@
                     <li><a href="<?php echo BASE_URL; ?>food-nutrition.php">Dog Food & Nutrition</a></li>
                     <li><a href="<?php echo BASE_URL; ?>dog-accessories.php">Dog Accessories</a></li>
                     <li><a href="<?php echo BASE_URL; ?>doghealth.php">Dog Health</a></li>
-                    <li><a href="#">Dog Toys</a></li>
-                    <li><a href="#">Dog Beds & Comfort</a></li>
-                    <li><a href="#">Tech & Gadgets</a></li>
                 </ul>
             </div>
             <div class="footer-column">
