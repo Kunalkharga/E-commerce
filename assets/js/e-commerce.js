@@ -51,6 +51,39 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+   // Toggle mobile menu
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Toggle user dropdown on mobile
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const menu = this.querySelector('.dropdown-menu');
+                    if (menu) {
+                        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                        const icon = this.querySelector('.dropdown-icon');
+                        if (icon) icon.style.display = menu.style.display === 'block' ? 'inline' : 'none';
+                    }
+                }
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    if (!menu.contains(e.target) && !menu.parentElement.contains(e.target)) {
+                        menu.style.display = 'none';
+                        const icon = menu.parentElement.querySelector('.dropdown-icon');
+                        if (icon) icon.style.display = 'none';
+                    }
+                });
+            }
+        });
+
   // Handle window resize
   window.addEventListener('resize', function () {
     if (window.innerWidth > 768) {

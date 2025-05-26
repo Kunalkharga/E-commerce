@@ -16,8 +16,15 @@ $products = $stmt->fetchAll();
     <div class="sidebar">
         <h3 class="sidebar-title">Categories</h3>
         <ul class="category-list">
-            <?php foreach ($categories as $category): ?>
-                <li><a href="<?php echo strtolower(str_replace(' ', '-', $category['name'])) . '.php'; ?>">
+            <?php foreach ($categories as $category): 
+                // Custom mapping for category URLs to match exact filenames
+                $category_name = $category['name'];
+                $category_url = strtolower(str_replace(' ', '-', $category_name)); // Basic transformation
+                // Specific fixes for your filenames
+                if ($category_name == 'Food & Nutrition') $category_url = 'food-nutrition';
+                elseif ($category_name == 'Dog Health') $category_url = 'doghealth';
+                ?>
+                <li><a href="<?php echo $category_url . '.php'; ?>">
                         <i class="fas fa-paw"></i> <?php echo htmlspecialchars($category['name']); ?>
                     </a></li>
             <?php endforeach; ?>
