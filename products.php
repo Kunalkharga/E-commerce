@@ -18,8 +18,8 @@ $products = $stmt->fetchAll();
         <ul class="category-list">
             <?php foreach ($categories as $category): ?>
                 <li><a href="<?php echo strtolower(str_replace(' ', '-', $category['name'])) . '.php'; ?>">
-                    <i class="fas fa-paw"></i> <?php echo htmlspecialchars($category['name']); ?>
-                </a></li>
+                        <i class="fas fa-paw"></i> <?php echo htmlspecialchars($category['name']); ?>
+                    </a></li>
             <?php endforeach; ?>
         </ul>
     </div>
@@ -31,7 +31,8 @@ $products = $stmt->fetchAll();
                     <?php if ($product['badge']): ?>
                         <span class="product-badge"><?php echo htmlspecialchars($product['badge']); ?></span>
                     <?php endif; ?>
-                    <img src="<?php echo BASE_URL; ?>assets/images/product-images/<?php echo $product['image']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" class="product-image">
+                    <img src="<?php echo BASE_URL; ?>assets/images/product-images/<?php echo $product['image']; ?>"
+                        alt="<?php echo htmlspecialchars($product['name']); ?>" class="product-image">
                     <div class="product-rating">
                         <?php for ($i = 0; $i < 5; $i++): ?>
                             <i class="fas fa-star <?php echo $i < $product['rating'] ? '' : 'far'; ?>"></i>

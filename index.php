@@ -31,7 +31,7 @@ $products = $stmt->fetchAll();
             </div>
             <h3>Food & Nutrition</h3>
             <p>Premium nutrition for your canine companion</p>
-            <a href="food&nutritions.html" class="btn">Shop Now</a>
+            <a href="food-nutrition.php" class="btn">Shop Now</a>
         </div>
         <div class="category-card">
             <div class="category-icon">
@@ -39,7 +39,7 @@ $products = $stmt->fetchAll();
             </div>
             <h3>Dog Accessories</h3>
             <p>Everything your pet needs for a happy life</p>
-            <a href="dog-aaccessories.html" class="btn">Shop Now</a>
+            <a href="dog-accessories.php" class="btn">Shop Now</a>
         </div>
         <div class="category-card">
             <div class="category-icon">
@@ -47,7 +47,7 @@ $products = $stmt->fetchAll();
             </div>
             <h3>Dog Health</h3>
             <p>Keep your pet healthy and happy</p>
-            <a href="doghealth.html" class="btn">Shop Now</a>
+            <a href="doghealth.php" class="btn">Shop Now</a>
         </div>
     </div>
 </section>
