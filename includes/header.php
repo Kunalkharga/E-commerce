@@ -4,6 +4,7 @@ require_once 'config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@ require_once 'config.php';
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/e-commerce.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <nav>
         <div class="container">
@@ -25,7 +27,8 @@ require_once 'config.php';
                 <ul class="nav-links">
                     <li><a href="<?php echo BASE_URL; ?>index.php">Home</a></li>
                     <li class="dropdown">
-                        <a href="<?php echo BASE_URL; ?>products.php" class="dropdown-toggle">Products <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <a href="<?php echo BASE_URL; ?>products.php" class="dropdown-toggle">Products <i
+                                class="fas fa-chevron-down dropdown-icon"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="<?php echo BASE_URL; ?>food-nutrition.php">Food & Nutrition</a></li>
                             <li><a href="<?php echo BASE_URL; ?>dog-accessories.php">Dog Accessories</a></li>
@@ -46,8 +49,8 @@ require_once 'config.php';
                         <a href="#"><i class="fas fa-shopping-cart"></i></a>
                     </div>
                     <?php if (isset($_SESSION['user_id'])): ?>
-                        <li><a href="<?php echo BASE_URL; ?>user/profile.php">Profile</a></li>
-                        <li><a href="<?php echo BASE_URL; ?>user/logout.php">Logout</a></li>
+                        <li><a href="<?php echo BASE_URL; ?>user/profile.php"><i class="fas fa-user"></i></a></li>
+                        <li><a href="<?php echo BASE_URL; ?>user/logout.php"><i class="fas fa-sign-out-alt"></i></a></li>
                     <?php else: ?>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle nav-icons">
@@ -64,6 +67,7 @@ require_once 'config.php';
             </div>
         </div>
     </nav>
-    
+
 </body>
+
 </html>
