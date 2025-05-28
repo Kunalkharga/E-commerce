@@ -10,6 +10,6 @@ if (!isset($_SESSION['admin_id'])) {
 $product_id = $_GET['id'];
 $stmt = $pdo->prepare("DELETE FROM products WHERE id = ?");
 $stmt->execute([$product_id]);
-header("Location: dashboard.php");
+header("Location: dashboard.php?section=product-list");
 exit;
 ?>
