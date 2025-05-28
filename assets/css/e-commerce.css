@@ -570,7 +570,7 @@ nav {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  line-clamp: 2; /* Limit to 2 lines */
   -webkit-box-orient: vertical;
 }
 
@@ -646,7 +646,7 @@ nav {
 }
 
 .quantity-input[type="number"] {
-  -moz-appearance: textfield; /* Firefox */
+  appearance: textfield; /* Firefox */
 }
 
 .add-to-cart {
