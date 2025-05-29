@@ -2,8 +2,6 @@
 require_once 'includes/db_connect.php';
 session_start();
 
-
-
 // Fetch products for Dog Accessories category
 $stmt = $pdo->prepare("SELECT p.*, c.name as category_name FROM products p JOIN categories c ON p.category_id = c.id WHERE c.name = ?");
 $stmt->execute(['Dog Accessories']);
@@ -19,7 +17,7 @@ $products = $stmt->fetchAll();
                 <p>No products found in this category.</p>
             <?php else: ?>
                 <?php foreach ($products as $product): ?>
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="<?php echo $product['id']; ?>">
                         <?php if ($product['badge']): ?>
                             <span class="product-badge"><?php echo htmlspecialchars($product['badge']); ?></span>
                         <?php endif; ?>

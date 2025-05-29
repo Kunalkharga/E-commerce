@@ -1,6 +1,14 @@
 <?php
 require_once 'config.php';
-// session_start(); // Already handled in your main files
+// session_start();
+
+// Calculate total items in cart
+$cart_count = 0;
+if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
+    foreach ($_SESSION['cart'] as $item) {
+        $cart_count += $item['quantity'];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +17,7 @@ require_once 'config.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doggy - Pet Store</title>
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/e-commerce.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/e-commerce.css?v=5">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -46,7 +54,12 @@ require_once 'config.php';
                         </div>
                     </div>
                     <div class="nav-icons">
-                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="<?php echo BASE_URL; ?>cart.php" class="cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <?php if ($cart_count > 0): ?>
+                                <span class="cart-count"><?php echo $cart_count; ?></span>
+                            <?php endif; ?>
+                        </a>
                     </div>
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <li><a href="<?php echo BASE_URL; ?>user/profile.php"><i class="fas fa-user"></i></a></li>
@@ -67,7 +80,5 @@ require_once 'config.php';
             </div>
         </div>
     </nav>
-
 </body>
-
 </html>
