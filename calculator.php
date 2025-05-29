@@ -3,7 +3,7 @@
 <section class="calculator-section">
     <div class="calculator-container">
         <div class="calculator-header">
-            <img src="images/dog-calculator.png" alt="Cute Dog" class="calculator-dog">
+            <img src="assets/images/dog-calculator.png" alt="Cute Dog" class="calculator-dog">
             <h2>Dog Age Calculator</h2>
             <p>Find out how old your dog is in human years!</p>
         </div>
