@@ -858,10 +858,6 @@ nav {
   margin: 0;
 }
 
-.cart-table .quantity-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
 .cart-table .remove-item {
   color: #F1642C;
   text-decoration: none;

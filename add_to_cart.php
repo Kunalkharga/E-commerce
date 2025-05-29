@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once 'includes/db_connect.php';
+define('BASE_URL', 'http://localhost/doggy-ecommerce/');
 
 header('Content-Type: application/json');
 

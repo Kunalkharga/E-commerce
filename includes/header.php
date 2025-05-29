@@ -17,7 +17,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doggy - Pet Store</title>
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/e-commerce.css?v=5">
+  <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/e-commerce.css?v=8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -80,5 +80,6 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
             </div>
         </div>
     </nav>
+    
 </body>
 </html>

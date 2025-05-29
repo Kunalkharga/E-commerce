@@ -49,17 +49,3 @@ $products = $stmt->fetchAll();
     </div>
 </div>
 <?php include 'includes/footer.php'; ?>
-
-<script>
-document.querySelectorAll('.quantity-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        const input = button.parentElement.querySelector('.quantity-input');
-        let value = parseInt(input.value);
-        if (button.classList.contains('plus')) {
-            if (value < 10) input.value = value + 1;
-        } else if (button.classList.contains('minus')) {
-            if (value > 1) input.value = value - 1;
-        }
-    });
-});
-</script>
