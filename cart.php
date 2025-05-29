@@ -82,7 +82,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                 </table>
                 <div class="cart-actions">
                     <button type="submit" name="update_cart" class="btn-update-cart">Update Cart</button>
-                    <a href="<?php echo BASE_URL; ?>checkout.php" class="btn-checkout">Proceed to Checkout</a>
+                    <a href="checkout.php" class="btn" style="display: block; text-align: center; margin-top: 20px;">Proceed to Checkout</a>
                 </div>
             </form>
             <div class="cart-summary">
