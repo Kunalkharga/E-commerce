@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
   if (window.innerWidth > 768) {
     dropdownToggles.forEach(toggle => {
       toggle.addEventListener('click', (e) => {
-        // e.preventDefault(); // Prevent default only for desktop
       });
     });
   }
@@ -41,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const dropdown = toggle.parentElement;
         dropdown.classList.toggle('active');
 
-        // Close other open dropdowns
         document.querySelectorAll('.dropdown').forEach(item => {
           if (item !== dropdown) {
             item.classList.remove('active');
@@ -94,50 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-/* Search functionality */
-document.addEventListener('DOMContentLoaded', function () {
-  const searchIcon = document.querySelector('.fa-search').parentElement;
-  const searchContainer = document.querySelector('.search-container');
-  const closeSearch = document.querySelector('.close-search');
-  const navbar = document.querySelector('.navbar');
-
-  // Toggle search box
-  searchIcon.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.body.classList.add('search-active');
-    searchContainer.classList.add('active');
-    setTimeout(() => {
-      searchContainer.querySelector('input').focus();
-    }, 300);
-  });
-
-  // Close search box (if exists)
-  if (closeSearch) {
-    closeSearch.addEventListener('click', function () {
-      document.body.classList.remove('search-active');
-      searchContainer.classList.remove('active');
-    });
-  }
-
-  // Close when clicking outside
-  document.addEventListener('click', function (e) {
-    if (!searchContainer.contains(e.target) && !searchIcon.contains(e.target)) {
-      if (searchContainer.classList.contains('active')) {
-        document.body.classList.remove('search-active');
-        searchContainer.classList.remove('active');
-      }
-    }
-  });
-
-  // Prevent closing when clicking inside search box
-  searchContainer.addEventListener('click', function (e) {
-    e.stopPropagation();
-  });
-});
-
 /* Quantity Selector Functionality */
 document.addEventListener('DOMContentLoaded', function () {
-  // Quantity controls for product pages
   document.querySelectorAll('.product-card .quantity-btn').forEach(btn => {
     btn.addEventListener('click', function () {
       const input = this.parentElement.querySelector('.quantity-input');
@@ -165,109 +121,110 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
- // Add to Cart functionality
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', function() {
-        const productCard = this.closest('.product-card');
-        if (!productCard) {
-            console.error('Product card not found');
-            alert('Error: Product card not found.');
-            return;
-        }
+  // Add to Cart functionality
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function () {
+      const productCard = this.closest('.product-card');
+      if (!productCard) {
+        console.error('Product card not found');
+        alert('Error: Product card not found.');
+        return;
+      }
 
-        const productId = productCard.dataset.productId || '';
-        const productNameElement = productCard.querySelector('.product-name');
-        const productName = productNameElement ? productNameElement.textContent.trim() : '';
-        const productPriceElement = productCard.querySelector('.product-price');
-        const productPriceText = productPriceElement ? productPriceElement.textContent.trim() : '$0';
-        const productPrice = parseFloat(productPriceText.replace(/[^0-9.]/g, '')) || 0;
-        const quantityInput = productCard.querySelector('.quantity-input');
-        const quantity = quantityInput ? parseInt(quantityInput.value, 10) : 1;
-        const productImageElement = productCard.querySelector('.product-image');
-        const productImage = productImageElement ? productImageElement.src.split('/').pop() : '';
+      const productId = productCard.dataset.productId || '';
+      const productNameElement = productCard.querySelector('.product-name');
+      const productName = productNameElement ? productNameElement.textContent.trim() : '';
+      const productPriceElement = productCard.querySelector('.product-price');
+      const productPriceText = productPriceElement ? productPriceElement.textContent.trim() : '$0';
+      const productPrice = parseFloat(productPriceText.replace(/[^0-9.]/g, '')) || 0;
+      const quantityInput = productCard.querySelector('.quantity-input');
+      const quantity = quantityInput ? parseInt(quantityInput.value, 10) : 1;
+      const productImageElement = productCard.querySelector('.product-image');
+      const productImage = productImageElement ? productImageElement.src.split('/').pop() : '';
 
-        // Log data for debugging
-        console.log('Adding to cart:', { 
-            productId, 
-            productName, 
-            productPrice, 
-            productPriceText, 
-            quantity, 
-            quantityInputValue: quantityInput ? quantityInput.value : 'undefined', 
-            productImage 
-        });
+      // Log data for debugging
+      console.log('Adding to cart:', {
+        productId,
+        productName,
+        productPrice,
+        productPriceText,
+        quantity,
+        quantityInputValue: quantityInput ? quantityInput.value : 'undefined',
+        productImage
+      });
 
-        // Validate data before sending
-        if (!productId || productId === '') {
-            console.error('Invalid product ID:', productId);
-            alert('Error: Product ID is missing. Please ensure the product is properly configured.');
-            return;
-        }
-        if (!productName) {
-            console.error('Invalid product name:', productName);
-            alert('Error: Product name is missing. Please check the product card.');
-            return;
-        }
-        if (productPrice <= 0 || isNaN(productPrice)) {
-            console.error('Invalid product price:', productPrice, 'Raw text:', productPriceText);
-            alert('Error: Invalid product price. Please check the price format.');
-            return;
-        }
-        if (quantity <= 0 || isNaN(quantity)) {
-            console.error('Invalid quantity:', quantity);
-            alert('Error: Invalid quantity. Please select a valid quantity.');
-            return;
-        }
+      // Validate data before sending
+      if (!productId || productId === '') {
+        console.error('Invalid product ID:', productId);
+        alert('Error: Product ID is missing. Please ensure the product is properly configured.');
+        return;
+      }
+      if (!productName) {
+        console.error('Invalid product name:', productName);
+        alert('Error: Product name is missing. Please check the product card.');
+        return;
+      }
+      if (productPrice <= 0 || isNaN(productPrice)) {
+        console.error('Invalid product price:', productPrice, 'Raw text:', productPriceText);
+        alert('Error: Invalid product price. Please check the price format.');
+        return;
+      }
+      if (quantity <= 0 || isNaN(quantity)) {
+        console.error('Invalid quantity:', quantity);
+        alert('Error: Invalid quantity. Please select a valid quantity.');
+        return;
+      }
 
-        // AJAX request to add to cart
-        fetch('add_to_cart.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: `product_id=${encodeURIComponent(productId)}&name=${encodeURIComponent(productName)}&price=${productPrice}&quantity=${quantity}&image=${encodeURIComponent(productImage)}`
-        })
+      // AJAX request to add to cart
+      fetch('add_to_cart.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `product_id=${encodeURIComponent(productId)}&name=${encodeURIComponent
+          (productName)}&price=${productPrice}&quantity=${quantity}&image=${encodeURIComponent(productImage)}`
+      })
         .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
         })
         .then(data => {
-            console.log('Response:', data);
-            if (data.success) {
-                const cartCount = document.querySelector('.cart-count');
-                if (data.cart_count > 0) {
-                    if (!cartCount) {
-                        const cartIcon = document.querySelector('.cart-icon');
-                        if (cartIcon) {
-                            const span = document.createElement('span');
-                            span.className = 'cart-count';
-                            span.textContent = data.cart_count;
-                            cartIcon.appendChild(span);
-                        }
-                    } else {
-                        cartCount.textContent = data.cart_count;
-                    }
-                } else if (cartCount) {
-                    cartCount.remove();
+          console.log('Response:', data);
+          if (data.success) {
+            const cartCount = document.querySelector('.cart-count');
+            if (data.cart_count > 0) {
+              if (!cartCount) {
+                const cartIcon = document.querySelector('.cart-icon');
+                if (cartIcon) {
+                  const span = document.createElement('span');
+                  span.className = 'cart-count';
+                  span.textContent = data.cart_count;
+                  cartIcon.appendChild(span);
                 }
-                button.innerHTML = '<i class="fas fa-check"></i> Added!';
-                button.style.backgroundColor = '#4CAF50';
-                setTimeout(() => {
-                    button.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
-                    button.style.backgroundColor = '#F9942A';
-                }, 2000);
-            } else {
-                alert(data.message);
+              } else {
+                cartCount.textContent = data.cart_count;
+              }
+            } else if (cartCount) {
+              cartCount.remove();
             }
+            button.innerHTML = '<i class="fas fa-check"></i> Added!';
+            button.style.backgroundColor = '#4CAF50';
+            setTimeout(() => {
+              button.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+              button.style.backgroundColor = '#F9942A';
+            }, 2000);
+          } else {
+            alert(data.message);
+          }
         })
         .catch(error => {
-            console.error('Fetch error:', error);
-            alert('Failed to add to cart. Please check your connection.');
+          console.error('Fetch error:', error);
+          alert('Failed to add to cart. Please check your connection.');
         });
     });
-});
+  });
 
   /* DOG AGE CALCULATOR */
   document.addEventListener('DOMContentLoaded', function () {
@@ -333,27 +290,6 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
     }
   });
 
-  /* About Page Stats Animation */
-  document.addEventListener('DOMContentLoaded', function () {
-    const stats = document.querySelectorAll('.stat span');
-    stats.forEach(stat => {
-      const target = +stat.innerText.replace('+', '');
-      const increment = target / 30;
-      let current = 0;
-
-      const updateStat = () => {
-        if (current < target) {
-          stat.innerText = Math.ceil(current) + (stat.innerText.includes('+') ? '+' : '');
-          current += increment;
-          setTimeout(updateStat, 30);
-        } else {
-          stat.innerText = target + (stat.innerText.includes('+') ? '+' : '');
-        }
-      };
-      updateStat();
-    });
-  });
-
   /* Contact Form Validation */
   if (document.getElementById('contactForm')) {
     document.getElementById('contactForm').addEventListener('submit', function (e) {
@@ -362,22 +298,4 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
       this.reset();
     });
   }
-
-  /* FAQ Accordion */
-  document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-      const answer = question.nextElementSibling;
-      const icon = question.querySelector('i');
-
-      if (answer.style.maxHeight) {
-        answer.style.maxHeight = null;
-        icon.classList.remove('fa-chevron-up');
-        icon.classList.add('fa-chevron-down');
-      } else {
-        answer.style.maxHeight = answer.scrollHeight + 'px';
-        icon.classList.remove('fa-chevron-down');
-        icon.classList.add('fa-chevron-up');
-      }
-    });
-  });
 });

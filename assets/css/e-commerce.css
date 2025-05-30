@@ -90,7 +90,6 @@ nav {
   padding: 8px 20px;
   color: #333;
   text-decoration: none;
-  /* Removes underline */
   transition: all 0.3s;
 }
 
@@ -493,17 +492,13 @@ nav {
 
 
 /* Best Sellers Section */
-/* Best Sellers Section */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
-  /* Fixed 250px width per card */
   gap: 25px;
   margin: 40px 0;
   justify-content: center;
-  /* Center the grid items */
   max-width: 1200px;
-  /* Match container width */
   margin-left: auto;
   margin-right: auto;
 }
@@ -516,9 +511,7 @@ nav {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   width: 250px;
-  /* Fixed width for consistency */
   min-height: 400px;
-  /* Minimum height for uniform size */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -572,12 +565,10 @@ nav {
   color: #333;
   margin: 5px 0;
   flex-grow: 1;
-  /* Allows name to take available space */
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   line-clamp: 2;
-  /* Limit to 2 lines */
   -webkit-box-orient: vertical;
 }
 
@@ -607,15 +598,12 @@ nav {
   border-radius: 30px;
   overflow: hidden;
   width: 120px;
-  /* Fixed width for consistency */
   height: 36px;
-  /* Fixed height for alignment */
 }
 
 .quantity-btn {
   width: 36px;
   height: 36px;
-  /* Match height of selector */
   background: #f5f5f5;
   border: none;
   font-size: 14px;
@@ -637,9 +625,7 @@ nav {
 
 .quantity-input {
   width: 48px;
-  /* Adjusted for balance */
   height: 36px;
-  /* Match height of buttons */
   text-align: center;
   border: none;
   border-left: 1px solid #ddd;
@@ -648,7 +634,6 @@ nav {
   font-size: 14px;
   background: white;
   line-height: 36px;
-  /* Center text vertically */
 }
 
 /* Remove number input arrows */
@@ -660,7 +645,6 @@ nav {
 
 .quantity-input[type="number"] {
   appearance: textfield;
-  /* Firefox */
 }
 
 .add-to-cart {
@@ -694,7 +678,6 @@ nav {
 
   .product-card {
     width: 200px;
-    /* Smaller width for tablets */
     min-height: 360px;
   }
 
@@ -704,7 +687,6 @@ nav {
 
   .quantity-selector {
     width: 100px;
-    /* Slightly smaller for tablets */
     height: 32px;
   }
 
@@ -727,9 +709,7 @@ nav {
 
   .product-card {
     width: 100%;
-    /* Full width for mobile */
     max-width: 250px;
-    /* Consistent with desktop */
     margin: 0 auto;
     min-height: 380px;
   }
@@ -740,7 +720,6 @@ nav {
 
   .quantity-selector {
     width: 120px;
-    /* Restore desktop size for clarity */
     height: 36px;
   }
 
@@ -1483,7 +1462,6 @@ footer {
   .sidebar {
     width: 100%;
     position: static;
-    /* Remove sticky on mobile */
     margin-top: 30px;
     top: auto;
   }
@@ -1979,4 +1957,65 @@ textarea.form-control {
   .contact-container {
     flex-direction: column;
   }
+}
+
+
+
+/* User Profile Page */
+.profile-card {
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    text-align: center;
+}
+
+.profile-image {
+    margin-bottom: 10px;
+}
+
+.profile-name {
+    font-size: 24px;
+    margin: 0;
+}
+
+.profile-details {
+    text-align: center;
+}
+
+.profile-details p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.profile-actions {
+    margin-top: 20px;
+}
+
+.profile-actions .btn {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-actions .btn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .profile-card {
+        margin: 20px;
+        width: 100%;
+    }
+    .profile-actions .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
