@@ -34,7 +34,7 @@ $products = $stmt->fetchAll();
         <h2 class="section-title">All Products</h2>
         <div class="products-grid">
             <?php foreach ($products as $product): ?>
-                <div class="product-card">
+                <div class="product-card" data-product-id="<?php echo $product['id']; ?>">
                     <?php if ($product['badge']): ?>
                         <span class="product-badge"><?php echo htmlspecialchars($product['badge']); ?></span>
                     <?php endif; ?>

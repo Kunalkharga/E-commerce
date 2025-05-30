@@ -4,6 +4,7 @@ require_once 'includes/db_connect.php';
 define('BASE_URL', 'http://localhost/doggy-ecommerce/');
 
 header('Content-Type: application/json');
+file_put_contents('debug.log', print_r($_POST, true) . "\n", FILE_APPEND);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $product_id = isset($_POST['product_id']) ? intval($_POST['product_id']) : 0;

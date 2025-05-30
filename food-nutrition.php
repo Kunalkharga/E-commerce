@@ -17,7 +17,7 @@ $products = $stmt->fetchAll();
                 <p>No products found in this category.</p>
             <?php else: ?>
                 <?php foreach ($products as $product): ?>
-                    <div class="product-card" class="product-card" data-product-id="1">
+                    <div class="product-card" data-product-id="<?php echo $product['id']; ?>">
                         <?php if ($product['badge']): ?>
                             <span class="product-badge"><?php echo htmlspecialchars($product['badge']); ?></span>
                         <?php endif; ?>

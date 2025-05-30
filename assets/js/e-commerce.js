@@ -130,8 +130,9 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Error: Product card not found.');
         return;
       }
-
+      console.log('Product Card:', productCard);
       const productId = productCard.dataset.productId || '';
+      console.log('Product ID:', productId);
       const productNameElement = productCard.querySelector('.product-name');
       const productName = productNameElement ? productNameElement.textContent.trim() : '';
       const productPriceElement = productCard.querySelector('.product-price');
@@ -143,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const productImage = productImageElement ? productImageElement.src.split('/').pop() : '';
 
       // Log data for debugging
-      console.log('Adding to cart:', {
+      console.log('Sending to add_to_cart.php:', {
         productId,
         productName,
         productPrice,
