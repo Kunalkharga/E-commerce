@@ -290,6 +290,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+
   /* Contact Form Validation */
   if (document.getElementById('contactForm')) {
     document.getElementById('contactForm').addEventListener('submit', function (e) {
