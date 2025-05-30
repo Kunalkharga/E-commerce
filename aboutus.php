@@ -79,7 +79,7 @@
     <h2 class="section-title">Why Trust Doggy?</h2>
     <div class="trust-badges"></div>
     <div style="text-align: center;">
-      <a href="products.html" class="btn-primary">Shop Our Products</a>
+      <a href="products.php" class="btn-primary">Shop Our Products</a>
     </div>
   </section>
 
