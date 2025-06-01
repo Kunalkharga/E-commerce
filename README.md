@@ -38,4 +38,4 @@ A complete e-commerce platform for pet supplies with user authentication, produc
 - MySQL Database
 - Session management
 
-![alt text](assets/images/Home.png)
+![alt text](assets/images/home.png)
