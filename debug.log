@@ -7,3 +7,12 @@ Array
     [image] => product8.jpg
 )
 
+Array
+(
+    [product_id] => 31
+    [name] => Choco
+    [price] => 50.0055
+    [quantity] => 2
+    [image] => product8.jpg
+)
+
