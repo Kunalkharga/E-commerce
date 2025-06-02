@@ -21,7 +21,7 @@ A complete e-commerce platform for pet supplies with user authentication, produc
   - Quantity adjustment
   - Cart persistence using sessions
 
-- 🖥️ **Admin Panel** (Coming Soon)
+- 🖥️ **Admin Panel**
   - Product management
   - Order management
   - User management
