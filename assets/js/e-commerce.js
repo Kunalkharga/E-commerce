@@ -1,36 +1,29 @@
 /* Mobile Menu Toggle */
-document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
-  document.querySelector('.nav-links').classList.toggle('active');
-});
-
-/* Close mobile menu when clicking on a link */
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', function () {
-    document.querySelector('.nav-links').classList.remove('active');
+document.addEventListener('DOMContentLoaded', function () {
+  // Toggle mobile menu
+  document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('active');
   });
-});
 
-/* Smooth scrolling for anchor links */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
+  /* Close mobile menu when clicking on a link */
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function () {
+      document.querySelector('.nav-links').classList.remove('active');
     });
   });
-});
 
-/* Dropdown functionality */
-document.addEventListener('DOMContentLoaded', function () {
-  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-  // Desktop hover functionality
-  if (window.innerWidth > 768) {
-    dropdownToggles.forEach(toggle => {
-      toggle.addEventListener('click', (e) => {
+  /* Smooth scrolling for anchor links */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
       });
     });
-  }
+  });
+
+  /* Dropdown functionality */
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
   // Mobile click functionality
   if (window.innerWidth <= 768) {
@@ -48,11 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
-
-  // Toggle mobile menu
-  document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
-    document.querySelector('.nav-links').classList.toggle('active');
-  });
 
   // Toggle user dropdown on mobile
   document.querySelectorAll('.dropdown').forEach(dropdown => {
@@ -90,10 +78,9 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
-});
 
-/* Quantity Selector Functionality */
-document.addEventListener('DOMContentLoaded', function () {
+  /* Quantity Selector Functionality */
+  // Product card quantity controls
   document.querySelectorAll('.product-card .quantity-btn').forEach(btn => {
     btn.addEventListener('click', function () {
       const input = this.parentElement.querySelector('.quantity-input');
@@ -107,19 +94,40 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Quantity controls for cart page
-  document.querySelectorAll('.cart-table .quantity-btn').forEach(btn => {
+  // Cart page quantity controls
+  document.querySelectorAll('.cart-table .cart-quantity-btn').forEach(btn => {
     btn.addEventListener('click', function () {
-      const input = this.parentElement.querySelector('.quantity-input');
+      const input = this.parentElement.querySelector('.cart-quantity-input');
       let value = parseInt(input.value);
-      if (this.classList.contains('minus')) {
+      if (this.classList.contains('cart-minus')) {
         value = value > 1 ? value - 1 : 1;
-      } else if (this.classList.contains('plus')) {
+      } else if (this.classList.contains('cart-plus')) {
         value = value < 10 ? value + 1 : 10;
       }
       input.value = value;
+      // Update subtotal dynamically
+      const row = this.closest('tr');
+      const price = parseFloat(row.querySelector('td:nth-child(2)').textContent.replace('$', ''));
+      row.querySelector('td:nth-child(4)').textContent = '$' + (price * value).toFixed(2);
+      // Update total summary (client-side only)
+      updateCartTotal();
     });
   });
+
+  function updateCartTotal() {
+    let total = 0;
+    document.querySelectorAll('.cart-table tbody tr').forEach(row => {
+      const price = parseFloat(row.querySelector('td:nth-child(2)').textContent.replace('$', ''));
+      const quantity = parseInt(row.querySelector('.cart-quantity-input').value);
+      total += price * quantity;
+    });
+    document.querySelector('.cart-summary p:last-child').textContent = 'Total Price: $' + total.toFixed(2);
+  }
+
+  // Initialize total on page load
+  if (document.querySelector('.cart-table')) {
+    updateCartTotal();
+  }
 
   // Add to Cart functionality
   document.querySelectorAll('.add-to-cart').forEach(button => {
@@ -182,8 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: `product_id=${encodeURIComponent(productId)}&name=${encodeURIComponent
-          (productName)}&price=${productPrice}&quantity=${quantity}&image=${encodeURIComponent(productImage)}`
+        body: `product_id=${encodeURIComponent(productId)}&name=${encodeURIComponent(productName)}&price=${productPrice}&quantity=${quantity}&image=${encodeURIComponent(productImage)}`
       })
         .then(response => {
           if (!response.ok) {
@@ -228,69 +235,66 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* DOG AGE CALCULATOR */
-  document.addEventListener('DOMContentLoaded', function () {
-    if (document.getElementById('calculate-btn')) {
-      const calculateBtn = document.getElementById('calculate-btn');
-      const resultDiv = document.getElementById('result');
-      const resultContainer = document.getElementById('result-container');
+  if (document.getElementById('calculate-btn')) {
+    const calculateBtn = document.getElementById('calculate-btn');
+    const resultDiv = document.getElementById('result');
+    const resultContainer = document.getElementById('result-container');
 
-      calculateBtn.addEventListener('click', function () {
-        const dogAge = parseInt(document.getElementById('dog-age').value);
-        const dogSize = document.getElementById('dog-size').value;
+    calculateBtn.addEventListener('click', function () {
+      const dogAge = parseInt(document.getElementById('dog-age').value);
+      const dogSize = document.getElementById('dog-size').value;
 
-        if (isNaN(dogAge)) {
-          resultDiv.innerHTML = 'Please enter a valid age';
-          return;
-        }
-
-        if (dogAge < 1 || dogAge > 30) {
-          resultDiv.innerHTML = 'Please enter an age between 1 and 30';
-          return;
-        }
-
-        let humanAge;
-        if (dogSize === 'small') {
-          humanAge = dogAge <= 2 ? dogAge * 12.5 : 25 + (dogAge - 2) * 4.5;
-        } else if (dogSize === 'medium') {
-          humanAge = dogAge <= 2 ? dogAge * 10.5 : 21 + (dogAge - 2) * 5;
-        } else if (dogSize === 'large') {
-          humanAge = dogAge <= 2 ? dogAge * 9 : 18 + (dogAge - 2) * 6;
-        } else {
-          humanAge = dogAge <= 2 ? dogAge * 8 : 16 + (dogAge - 2) * 7.5;
-        }
-
-        humanAge = Math.round(humanAge);
-
-        resultDiv.innerHTML = `
-                <p>Your <strong>${dogSize}</strong> dog is <strong>${dogAge}</strong> years old,</p>
-                <p>which is about <strong>${humanAge}</strong> in human years!</p>
-                <div class="dog-rating">
-                    ${getDogIcons(dogAge)}
-                </div>
-            `;
-
-        setTimeout(() => {
-          window.scrollBy({
-            top: 225,
-            behavior: 'smooth'
-          });
-        }, 100);
-      });
-
-      function getDogIcons(age) {
-        const fullDogs = Math.min(5, Math.floor(age / 2));
-        let icons = '';
-        for (let i = 0; i < fullDogs; i++) {
-          icons += '<i class="fas fa-dog" style="color: #F9942A;"></i>';
-        }
-        if (age % 2 !== 0 && fullDogs < 5) {
-          icons += '<i class="fas fa-dog" style="color: #ddd;"></i>';
-        }
-        return icons;
+      if (isNaN(dogAge)) {
+        resultDiv.innerHTML = 'Please enter a valid age';
+        return;
       }
-    }
-  });
 
+      if (dogAge < 1 || dogAge > 30) {
+        resultDiv.innerHTML = 'Please enter an age between 1 and 30';
+        return;
+      }
+
+      let humanAge;
+      if (dogSize === 'small') {
+        humanAge = dogAge <= 2 ? dogAge * 12.5 : 25 + (dogAge - 2) * 4.5;
+      } else if (dogSize === 'medium') {
+        humanAge = dogAge <= 2 ? dogAge * 10.5 : 21 + (dogAge - 2) * 5;
+      } else if (dogSize === 'large') {
+        humanAge = dogAge <= 2 ? dogAge * 9 : 18 + (dogAge - 2) * 6;
+      } else {
+        humanAge = dogAge <= 2 ? dogAge * 8 : 16 + (dogAge - 2) * 7.5;
+      }
+
+      humanAge = Math.round(humanAge);
+
+      resultDiv.innerHTML = `
+        <p>Your <strong>${dogSize}</strong> dog is <strong>${dogAge}</strong> years old,</p>
+        <p>which is about <strong>${humanAge}</strong> in human years!</p>
+        <div class="dog-rating">
+          ${getDogIcons(dogAge)}
+        </div>
+      `;
+
+      setTimeout(() => {
+        window.scrollBy({
+          top: 225,
+          behavior: 'smooth'
+        });
+      }, 100);
+    });
+
+    function getDogIcons(age) {
+      const fullDogs = Math.min(5, Math.floor(age / 2));
+      let icons = '';
+      for (let i = 0; i < fullDogs; i++) {
+        icons += '<i class="fas fa-dog" style="color: #F9942A;"></i>';
+      }
+      if (age % 2 !== 0 && fullDogs < 5) {
+        icons += '<i class="fas fa-dog" style="color: #ddd;"></i>';
+      }
+      return icons;
+    }
+  }
 
   /* Contact Form Validation */
   if (document.getElementById('contactForm')) {

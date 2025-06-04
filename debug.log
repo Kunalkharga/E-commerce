@@ -16,3 +16,30 @@ Array
     [image] => product8.jpg
 )
 
+Array
+(
+    [product_id] => 31
+    [name] => Choco
+    [price] => 50.0055
+    [quantity] => 1
+    [image] => product8.jpg
+)
+
+Array
+(
+    [product_id] => 32
+    [name] => Belt
+    [price] => 40.0045
+    [quantity] => 1
+    [image] => product5.jpg
+)
+
+Array
+(
+    [product_id] => 33
+    [name] => medicare
+    [price] => 45.005
+    [quantity] => 1
+    [image] => product6.jpg
+)
+

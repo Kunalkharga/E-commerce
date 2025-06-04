@@ -37,9 +37,9 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
 ?>
 
 <?php include 'includes/header.php'; ?>
-<div class="main-content">
-    <div class="products-section">
-        <h2 class="section-title">Shopping Cart</h2>
+<div class="cart-main-content">
+    <div class="cart-products-section">
+        <h2 class="cart-section-title">Shopping Cart</h2>
         <?php if (empty($_SESSION['cart'])): ?>
             <p>Your cart is empty. <a href="<?php echo BASE_URL; ?>products.php">Shop now!</a></p>
         <?php else: ?>
@@ -66,23 +66,23 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                                 </td>
                                 <td>$<?php echo number_format($item['price'], 2); ?></td>
                                 <td>
-                                    <div class="quantity-selector">
-                                        <button type="button" class="quantity-btn minus"><i class="fas fa-minus"></i></button>
-                                        <input type="number" name="quantities[<?php echo $index; ?>]" value="<?php echo $item['quantity']; ?>" min="1" max="10" class="quantity-input">
-                                        <button type="button" class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                                    <div class="cart-quantity-selector">
+                                        <button type="button" class="cart-quantity-btn cart-minus"><i class="fas fa-minus"></i></button>
+                                        <input type="number" name="quantities[<?php echo $index; ?>]" value="<?php echo $item['quantity']; ?>" min="1" max="10" class="cart-quantity-input">
+                                        <button type="button" class="cart-quantity-btn cart-plus"><i class="fas fa-plus"></i></button>
                                     </div>
                                 </td>
                                 <td>$<?php echo number_format($item['price'] * $item['quantity'], 2); ?></td>
                                 <td>
-                                    <a href="cart.php?remove=<?php echo $index; ?>" class="remove-item" onclick="return confirm('Remove this item?');">Remove</a>
+                                    <a href="cart.php?remove=<?php echo $index; ?>" class="cart-remove-item" onclick="return confirm('Remove this item?');">Remove</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
                 <div class="cart-actions">
-                    <button type="submit" name="update_cart" class="btn-update-cart">Update Cart</button>
-                    <a href="checkout.php" class="btn" style="display: block; text-align: center; margin-top: 20px;">Proceed to Checkout</a>
+                    <button type="submit" name="update_cart" class="cart-btn-update">Update Cart</button>
+                    <a href="checkout.php" class="cart-btn-checkout">Proceed to Checkout</a>
                 </div>
             </form>
             <div class="cart-summary">
