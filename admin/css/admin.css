@@ -1,28 +1,155 @@
-table {
+body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    max-width: 400px;
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
-th, td {
-    padding: 10px;
+
+.login-container h2 {
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
     text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%; /* Use 100% to fit within parent */
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+    padding: 12px 40px 12px 15px; /* Adjusted padding for icon */
     border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-th {
-    background-color: #F9942A;
+
+.form-group input:focus {
+    outline: none;
+    border-color: #F9942A;
+    box-shadow: 0 0 8px rgba(249, 148, 42, 0.2);
+}
+
+.form-group i {
+    position: absolute;
+    top: 38px; /* Adjusted to align with input */
+    right: 15px;
+    color: #888;
+    font-size: 16px;
+}
+
+.error {
+    color: #F1642C;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.success {
+    color: #28a745;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.btn-submit, .login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #F9942A;
+    border: none;
+    border-radius: 6px;
     color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+
+.btn-submit:hover, .login-btn:hover {
+    background: #F1642C;
 }
-.btn-submit {
+
+.btn-register {
+    display: block;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid #F9942A;
+    border-radius: 6px;
+    color: #F9942A;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-register:hover {
     background: #F9942A;
     color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
 }
-.btn-submit:hover {
-    background: #F1642C;
+
+.register-link {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.register-link p {
+    font-size: 14px;
+    color: #555;
+}
+
+.register-link a {
+    color: #F9942A;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+
+    .form-group input {
+        padding: 10px 35px 10px 12px;
+    }
+
+    .btn-submit, .login-btn, .btn-register {
+        padding: 10px;
+        font-size: 14px;
+    }
 }

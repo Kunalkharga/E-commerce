@@ -30,24 +30,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login - Doggy</title>
-    <link rel="stylesheet" href="../assets/css/e-commerce.css">
+    <link rel="stylesheet" href="../admin/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
 </head>
 <body>
-    <div class="container">
+    <div class="login-container">
         <h2>Admin Login</h2>
         <?php if (isset($error)): ?>
-            <p style="color: red;"><?php echo $error; ?></p>
+            <p class="error"><?php echo htmlspecialchars($error); ?></p>
         <?php endif; ?>
         <form method="POST" class="contact-form">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" name="email" class="form-control" required>
+                <input type="email" name="email" id="email" class="form-control" required>
+                <i class="fas fa-envelope"></i>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" class="form-control" required>
+                <input type="password" name="password" id="password" class="form-control" required>
+                <i class="fas fa-lock"></i>
             </div>
             <button type="submit" class="btn-submit">Login</button>
+            <a href="register.php" class="btn-register">Register</a>
+            
         </form>
     </div>
 </body>
