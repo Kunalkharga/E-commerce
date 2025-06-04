@@ -25,21 +25,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <?php include '../includes/header.php'; ?>
-<div class="container">
+<div class="auth-container">
     <h2>User Login</h2>
     <?php if (isset($error)): ?>
-        <p style="color: red;"><?php echo $error; ?></p>
+        <p class="auth-error"><?php echo $error; ?></p>
     <?php endif; ?>
-    <form method="POST" class="contact-form">
-        <div class="form-group">
+    <form method="POST" class="auth-form">
+        <div class="auth-form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" class="form-control" required>
+            <input type="email" name="email" class="auth-form-control" required>
         </div>
-        <div class="form-group">
+        <div class="auth-form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" required>
+            <input type="password" name="password" class="auth-form-control" required>
         </div>
-        <button type="submit" class="btn-submit">Login</button>
+        <button type="submit" class="auth-btn-submit">Login</button>
     </form>
 </div>
 <?php include '../includes/footer.php'; ?>

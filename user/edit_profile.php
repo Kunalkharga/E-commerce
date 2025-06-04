@@ -59,40 +59,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <?php include '../includes/header.php'; ?>
-<div class="container">
-    <div class="profile-card">
-        <div class="profile-header" style="background-color: #004080; color: white; padding: 20px; border-radius: 10px 10px 0 0; text-align: center;">
-            <h2>Edit Profile</h2>
+<div class="auth-container">
+    <div class="auth-profile-card">
+        <div class="auth-profile-header">
+            <h2 class="auth-profile-name">Edit Profile</h2>
         </div>
-        <div class="profile-details" style="background-color: white; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+        <div class="auth-profile-details">
             <?php if (isset($error)): ?>
-                <p style="color: #F1642C; text-align: center;"><?php echo $error; ?></p>
+                <p class="auth-error"><?php echo $error; ?></p>
             <?php endif; ?>
             <?php if (isset($success)): ?>
-                <p style="color: green; text-align: center;"><?php echo $success; ?></p>
+                <p class="auth-success"><?php echo $success; ?></p>
             <?php endif; ?>
-            <form method="POST" enctype="multipart/form-data" style="max-width: 400px; margin: 0 auto;">
-                <div class="form-group">
+            <form method="POST" enctype="multipart/form-data" class="auth-form">
+                <div class="auth-form-group">
                     <label for="profile_image">Profile Image (Optional)</label>
-                    <input type="file" name="profile_image" id="profile_image" accept="image/*" class="form-control">
+                    <input type="file" name="profile_image" id="profile_image" accept="image/*" class="auth-form-control">
                     <?php if ($user['profile_image']): ?>
-                        <p style="margin-top: 10px;">
-                            Current Image: <img src="<?php echo BASE_URL; ?>assets/images/profile/<?php echo htmlspecialchars($user['profile_image']); ?>?t=<?php echo time(); ?>" alt="Profile Image" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                        <p class="auth-current-image">
+                            Current Image: <img src="<?php echo BASE_URL; ?>assets/images/profile/<?php echo htmlspecialchars($user['profile_image']); ?>?t=<?php echo time(); ?>" alt="Profile Image" class="auth-profile-img-small">
                         </p>
                     <?php endif; ?>
                 </div>
-                <div class="form-group">
+                <div class="auth-form-group">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($user['email']); ?>" required class="form-control">
+                    <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($user['email']); ?>" required class="auth-form-control">
                 </div>
-                <div class="form-group">
+                <div class="auth-form-group">
                     <label for="phone">Phone (Optional)</label>
-                    <input type="text" name="phone" id="phone" value="<?php echo htmlspecialchars($user['phone'] ?? ''); ?>" class="form-control">
+                    <input type="text" name="phone" id="phone" value="<?php echo htmlspecialchars($user['phone'] ?? ''); ?>" class="auth-form-control">
                 </div>
-                <button type="submit" class="btn" style="background-color: #F9942A; color: white; width: 100%; margin-top: 20px;">Save Changes</button>
+                <button type="submit" class="auth-btn auth-btn-save">Save Changes</button>
             </form>
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="profile.php" class="btn" style="background-color: #004080; color: white;">Back to Profile</a>
+            <div class="auth-back-link">
+                <a href="profile.php" class="auth-btn">Back to Profile</a>
             </div>
         </div>
     </div>
