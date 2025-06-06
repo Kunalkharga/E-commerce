@@ -17,7 +17,7 @@
             <!-- Blog Post 1 -->
             <article class="blog-card">
                 <div class="blog-image">
-                    <img src="images/blog1.jpg" alt="Dog eating premium food">
+                    <img src="assets/images/blog1.jpg" alt="Dog eating premium food">
                     <span class="blog-category">Nutrition</span>
                 </div>
                 <div class="blog-content">
@@ -33,7 +33,7 @@
             <!-- Blog Post 2 -->
             <article class="blog-card">
                 <div class="blog-image">
-                    <img src="images/blog2.jpg" alt="Dog training with chew toy">
+                    <img src="assets/images/blog2.jpg" alt="Dog training with chew toy">
                     <span class="blog-category">Training</span>
                 </div>
                 <div class="blog-content">
@@ -58,7 +58,7 @@
             <!-- Blog Post 3 -->
             <article class="blog-card">
                 <div class="blog-image">
-                    <img src="images/blog3.jpg" alt="Dog cooling off in summer">
+                    <img src="assets/images/blog3.jpg" alt="Dog cooling off in summer">
                     <span class="blog-category">Seasonal Care</span>
                 </div>
                 <div class="blog-content">
@@ -77,7 +77,7 @@
             <!-- Blog Post 4 -->
             <article class="blog-card">
                 <div class="blog-image">
-                    <img src="images/blog4.jpg" alt="Dog wearing LED collar">
+                    <img src="assets/images/blog4.jpg" alt="Dog wearing LED collar">
                     <span class="blog-category">Product Review</span>
                 </div>
                 <div class="blog-content">
