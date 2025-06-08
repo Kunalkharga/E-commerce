@@ -376,7 +376,7 @@ nav {
   font-size: 70px;
 }
 
-/* Ensure content stays above paws */
+/* Make sure content stays above paws */
 .hero-content,
 .hero-image {
   position: relative;
