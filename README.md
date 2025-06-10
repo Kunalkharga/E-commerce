@@ -1,4 +1,4 @@
-# Doggesh - Premium Pet Supplies E-commerce Website
+# E-commerce Website
 ![alt text](assets/images/logo.png)
 
 
