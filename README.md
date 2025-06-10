@@ -43,14 +43,6 @@ A complete e-commerce platform for pet supplies with user authentication, produc
 
 ---
 
-## 🗂️ Project Architecture
-
-The following diagram illustrates how my E-commerce website is structured.
-
-![Portfolio Architecture Diagram](assets/images/diagram.png)
-
----
-
 ## 📝 License
 
 This project is open-source and free to use. Feel free to fork, modify, or contribute.
