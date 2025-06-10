@@ -45,7 +45,7 @@ A complete e-commerce platform for pet supplies with user authentication, produc
 
 ## 🗂️ Project Architecture
 
-The following diagram illustrates how my portfolio website is structured and how files are served to the client from a static file host/web server.
+The following diagram illustrates how my E-commerce website is structured.
 
 ![Portfolio Architecture Diagram](assets/images/diagram.png)
 
