@@ -39,3 +39,4 @@ A complete e-commerce platform for pet supplies with user authentication, produc
 - Session management
 
 ![alt text](assets/images/home.png)
+![alt text](assets/images/admin-dashboard.png)
