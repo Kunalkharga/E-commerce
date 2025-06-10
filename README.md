@@ -40,3 +40,21 @@ A complete e-commerce platform for pet supplies with user authentication, produc
 
 ![alt text](assets/images/home.png)
 ![alt text](assets/images/admin-dashboard.png)
+
+---
+
+## 🗂️ Project Architecture
+
+The following diagram illustrates how my portfolio website is structured and how files are served to the client from a static file host/web server.
+
+![Portfolio Architecture Diagram](assets/images/diagram.png)
+
+---
+
+## 📝 License
+
+This project is open-source and free to use. Feel free to fork, modify, or contribute.
+
+---
+
+⭐️ **Thank you for visiting my portfolio!** If you like this project, don’t forget to give it a star!
