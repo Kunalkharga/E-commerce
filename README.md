@@ -47,6 +47,10 @@ A complete e-commerce platform for pet supplies with user authentication, produc
 
 This project is open-source and free to use. Feel free to fork, modify, or contribute.
 
+
+This project is licensed under the [MIT License](LICENSE).
+
+
 ---
 
-⭐️ **Thank you for visiting my portfolio!** If you like this project, don’t forget to give it a star!
+⭐️ **Thank you for visiting my E-commerce project!** If you like this project, don’t forget to give it a star!
