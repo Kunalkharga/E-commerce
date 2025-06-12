@@ -1,10 +1,8 @@
 <?php
-// Database configuration using environment variables
-define('DB_HOST', getenv('DB_HOST'));
-define('DB_USER', getenv('DB_USER'));
-define('DB_PASS', getenv('DB_PASS'));
-define('DB_NAME', getenv('DB_NAME'));
+define('DB_HOST', getenv('DB_HOST'));         // sql.freesqldatabase.com
+define('DB_USER', getenv('DB_USER'));         // your generated username
+define('DB_PASS', getenv('DB_PASS'));         // your generated password
+define('DB_NAME', getenv('DB_NAME'));         // your generated db name
 
-// Base URL for the website (you can update this after deployment)
 define('BASE_URL', getenv('BASE_URL') ?: 'http://localhost/doggy-ecommerce/');
 ?>
