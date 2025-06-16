@@ -491,7 +491,7 @@ nav {
 }
 
 
-/* Mobile Responsive Styles */
+/* Responsive Styles for Mobile and Tablet */
 @media (max-width: 768px) {
   /* Hero Section */
   .hero {
