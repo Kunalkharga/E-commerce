@@ -57,24 +57,29 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                     <tbody>
                         <?php foreach ($_SESSION['cart'] as $index => $item): ?>
                             <tr>
-                                <td>
+                                <td data-label="Product">
                                     <div class="cart-item">
                                         <img src="<?php echo BASE_URL; ?>assets/images/product-images/<?php echo htmlspecialchars($item['image']); ?>"
                                             alt="<?php echo htmlspecialchars($item['name']); ?>" class="cart-item-image">
                                         <span><?php echo htmlspecialchars($item['name']); ?></span>
                                     </div>
                                 </td>
-                                <td>$<?php echo number_format($item['price'], 2); ?></td>
-                                <td>
+                                <td data-label="Price">$<?php echo number_format($item['price'], 2); ?></td>
+                                <td data-label="Quantity">
                                     <div class="cart-quantity-selector">
-                                        <button type="button" class="cart-quantity-btn cart-minus"><i class="fas fa-minus"></i></button>
-                                        <input type="number" name="quantities[<?php echo $index; ?>]" value="<?php echo $item['quantity']; ?>" min="1" max="10" class="cart-quantity-input">
-                                        <button type="button" class="cart-quantity-btn cart-plus"><i class="fas fa-plus"></i></button>
+                                        <button type="button" class="cart-quantity-btn cart-minus"><i
+                                                class="fas fa-minus"></i></button>
+                                        <input type="number" name="quantities[<?php echo $index; ?>]"
+                                            value="<?php echo $item['quantity']; ?>" min="1" max="10"
+                                            class="cart-quantity-input">
+                                        <button type="button" class="cart-quantity-btn cart-plus"><i
+                                                class="fas fa-plus"></i></button>
                                     </div>
                                 </td>
-                                <td>$<?php echo number_format($item['price'] * $item['quantity'], 2); ?></td>
-                                <td>
-                                    <a href="cart.php?remove=<?php echo $index; ?>" class="cart-remove-item" onclick="return confirm('Remove this item?');">Remove</a>
+                                <td data-label="Total">$<?php echo number_format($item['price'] * $item['quantity'], 2); ?></td>
+                                <td data-label="Actions">
+                                    <a href="cart.php?remove=<?php echo $index; ?>" class="cart-remove-item"
+                                        onclick="return confirm('Remove this item?');">Remove</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
