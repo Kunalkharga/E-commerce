@@ -25,13 +25,13 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
     <nav>
         <div class="container">
             <div class="navbar">
+                <!-- Logo (left side) -->
                 <a href="<?php echo BASE_URL; ?>index.php" class="logo">
                     <img src="<?php echo BASE_URL; ?>assets/images/logo.png" alt="Doggy Logo" class="logo-img">
                     <span class="logo-text">Doggy</span>
                 </a>
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
+                
+                <!-- Desktop Navigation -->
                 <ul class="nav-links">
                     <li><a href="<?php echo BASE_URL; ?>index.php">Home</a></li>
                     <li class="dropdown">
@@ -77,6 +77,29 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                         </li>
                     <?php endif; ?>
                 </ul>
+                
+                <!-- Mobile Icons and Menu Button (right side) -->
+                <div class="mobile-icons">
+                    <a href="<?php echo BASE_URL; ?>cart.php" class="mobile-icon cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <?php if ($cart_count > 0): ?>
+                            <span class="cart-count"><?php echo $cart_count; ?></span>
+                        <?php endif; ?>
+                    </a>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <a href="<?php echo BASE_URL; ?>user/profile.php" class="mobile-icon">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    <?php else: ?>
+                        <a href="<?php echo BASE_URL; ?>user/login.php" class="mobile-icon">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    <?php endif; ?>
+                </div>
+                
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </div>
     </nav>

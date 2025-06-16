@@ -41,5 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <button type="submit" class="auth-btn-submit">Login</button>
     </form>
+    <!-- In your login.php file, add this below the login form -->
+<div class="register-link">
+    Don't have an account? <a href="<?php echo BASE_URL; ?>user/register.php">Register here</a>
+</div>
 </div>
 <?php include '../includes/footer.php'; ?>
