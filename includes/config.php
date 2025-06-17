@@ -17,4 +17,4 @@ define('BASE_URL', getenv('BASE_URL') ?: 'http://localhost/');
 
 // Base URL for the website
 //define('BASE_URL', 'http://localhost/doggy-ecommerce/');
-//?>
+?>
