@@ -8,13 +8,12 @@ define('BASE_URL', getenv('BASE_URL') ?: 'http://localhost/');
 
 
 
-//<?php
-// Database configuration
-//define('DB_HOST', 'localhost');
-//define('DB_USER', 'root'); // Replace with your MySQL username
-//define('DB_PASS', ''); // Replace with your MySQL password
-//define('DB_NAME', 'doggy_ecommerce');
+// <?php
 
-// Base URL for the website
-//define('BASE_URL', 'http://localhost/doggy-ecommerce/');
+// define('DB_HOST', 'localhost');
+// define('DB_USER', 'root'); // Replace with your MySQL username
+// define('DB_PASS', ''); // Replace with your MySQL password
+// define('DB_NAME', 'doggy_ecommerce');
+
+// define('BASE_URL', 'http://localhost/doggy-ecommerce/');
 ?>

@@ -27,6 +27,7 @@ $products = $stmt->fetchAll();
                     class="shape-fill"></path>
             </svg>
         </div>
+    </div>
 </section>
 <!-- Categories Section -->
 <section class="container">

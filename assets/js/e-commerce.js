@@ -1,4 +1,3 @@
-/* Mobile Menu Toggle */
 document.addEventListener('DOMContentLoaded', function () {
   // Toggle mobile menu
   document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
@@ -23,25 +22,24 @@ document.addEventListener('DOMContentLoaded', function () {
     dropdownToggles.forEach(toggle => {
       toggle.addEventListener('click', (e) => {
         e.preventDefault();
-        e.stopPropagation(); // Prevent event from bubbling up
+        e.stopPropagation();
         const dropdown = toggle.parentElement;
         const icon = toggle.querySelector('i.fa-chevron-down');
 
         // Toggle current dropdown
         dropdown.classList.toggle('active');
 
-        // ADD THIS - Rotate icon based on dropdown state
+        //Rotate icon based on dropdown state
         if (icon) {
           icon.style.transform = dropdown.classList.contains('active')
             ? 'rotate(180deg)'
             : 'rotate(0deg)';
         }
 
-        // Close other dropdowns (optional - remove if you want multiple dropdowns open)
+        // Close other dropdowns
         document.querySelectorAll('.dropdown').forEach(item => {
           if (item !== dropdown) {
             item.classList.remove('active');
-            // ADD THIS - Reset other dropdown icons
             const otherIcon = item.querySelector('i.fa-chevron-down');
             if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
           }
@@ -52,8 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Prevent clicks inside dropdown from closing parent menus
     document.querySelectorAll('.dropdown-menu a').forEach(link => {
       link.addEventListener('click', function (e) {
-        e.stopPropagation(); // Prevent event from bubbling up
-        // Keep the mobile menu open by not removing the 'active' class
+        e.stopPropagation(); 
       });
     });
   }
@@ -65,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
     this.closest('.mobile-user-dropdown').classList.toggle('active');
   });
 
-  // Close when clicking outside (modified to keep nav-links open)
+  // Close when clicking outside
   document.addEventListener('click', function (e) {
     // Only handle dropdown closures, not nav-links
     if (!e.target.closest('.dropdown') && !e.target.closest('.mobile-user-dropdown')) {
@@ -94,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* Quantity Selector Functionality */
-  // Product card quantity controls
   document.querySelectorAll('.product-card .quantity-btn').forEach(btn => {
     btn.addEventListener('click', function () {
       const input = this.parentElement.querySelector('.quantity-input');
@@ -211,7 +207,6 @@ document.addEventListener('DOMContentLoaded', function () {
             button.innerHTML = '<i class="fas fa-check"></i> Added!';
             button.style.backgroundColor = '#4CAF50';
             
-            // Reset button after 2 seconds
             setTimeout(() => {
                 button.innerHTML = originalHtml;
                 button.style.backgroundColor = '#F9942A';

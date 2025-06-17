@@ -18,6 +18,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doggy - Pet Store</title>
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>assets/css/e-commerce.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -30,7 +31,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                     <img src="<?php echo BASE_URL; ?>assets/images/logo.png" alt="Doggy Logo" class="logo-img">
                     <span class="logo-text">Doggy</span>
                 </a>
-                
+
                 <!-- Desktop Navigation -->
                 <ul class="nav-links">
                     <li><a href="<?php echo BASE_URL; ?>index.php">Home</a></li>
@@ -60,11 +61,12 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                                 <span class="cart-count"><?php echo $cart_count; ?></span>
                             <?php endif; ?>
                         </a>
-                    
-                    <?php if (isset($_SESSION['user_id'])): ?>
-                        <li><a href="<?php echo BASE_URL; ?>user/profile.php"><i class="fas fa-user"></i></a></li>
-                        <li><a href="<?php echo BASE_URL; ?>user/logout.php"><i class="fas fa-sign-out-alt"></i></a></li>
-                    <?php else: ?>
+
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                            <li><a href="<?php echo BASE_URL; ?>user/profile.php"><i class="fas fa-user"></i></a></li>
+                            <li><a href="<?php echo BASE_URL; ?>user/logout.php"><i class="fas fa-sign-out-alt"></i></a>
+                            </li>
+                        <?php else: ?>
                         </div>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle nav-icons">
@@ -78,7 +80,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                         </li>
                     <?php endif; ?>
                 </ul>
-                
+
                 <!-- Mobile Icons and Menu Button (right side) -->
                 <div class="mobile-icons">
                     <a href="<?php echo BASE_URL; ?>cart.php" class="mobile-icon cart-icon">
@@ -97,7 +99,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                         </a>
                     <?php endif; ?>
                 </div>
-                
+
                 <div class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </div>

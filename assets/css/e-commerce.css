@@ -131,7 +131,6 @@ nav {
     justify-content: space-between;
   }
   
-  /* Add this to prevent closing when clicking inside dropdown */
   .dropdown-menu {
     pointer-events: auto;
   }
@@ -205,7 +204,6 @@ nav {
   width: 100%;
 }
 
-/* Add this to your CSS if not already present */
 .nav-links i.fa-chevron-down {
     transition: transform 0.3s ease;
 }
@@ -214,7 +212,10 @@ nav {
 .nav-icons {
   display: flex;
   align-items: center;
-  gap: 20px;
+}
+
+.nav-icons > li + li {
+  margin-left: 3px; 
 }
 
 .nav-icons i {
@@ -247,7 +248,6 @@ nav {
 
 /* Updated Mobile Menu Styles */
 @media (max-width: 768px) {
-  /* Hide desktop elements */
   .nav-icons, .search-container {
     display: none !important;
   }
@@ -263,7 +263,7 @@ nav {
   /* Logo on the left */
   .logo {
     order: 1;
-    margin-right: auto; /* Pushes other elements to the right */
+    margin-right: auto; 
   }
 
   /* Icons container next to hamburger */
@@ -277,7 +277,7 @@ nav {
   /* Hamburger menu button */
   .mobile-menu-btn {
     order: 3;
-    margin-left: 0px; /* Space between icons and hamburger */
+    margin-left: 0px; 
   }
 
   /* Mobile icon styles */
@@ -347,7 +347,7 @@ nav {
     width: 100%;
     margin: 0;
     text-align: center;
-    opacity: 0; /* Start hidden for animation */
+    opacity: 0; 
     transform: translateX(-20px);
     transition: all 0.3s ease;
   }
@@ -365,14 +365,14 @@ nav {
   .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
   .nav-links.active li:nth-child(5) { transition-delay: 0.5s; }
   .nav-links.active li:nth-child(6) { transition-delay: 0.6s; }
-  /* Add more if needed */
+  
 
   .nav-links li a {
     display: block;
     width: 100%;
     padding: 12px 0;
     font-size: 18px;
-    color: #333; /* Adjust color */
+    color: #333;
     font-weight: 500;
   }
 
@@ -416,7 +416,7 @@ nav {
   }
 
    .navbar {
-    height: 60px; /* Explicitly set navbar height */
+    height: 60px;
   }
   
   .logo-text {
@@ -543,7 +543,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 /* Left side content */
@@ -626,7 +625,7 @@ nav {
     .custom-shape-divider-bottom-1750144003 svg {
         width: calc(140% + 1.3px);
         height: 93px;
-    }
+    }  
 }
 
 /* Categories Section */
@@ -746,7 +745,6 @@ nav {
     left: 15%;
   }
 
-  /* Button adjustments */
   .btn {
     padding: 10px 20px;
     font-size: 14px;
@@ -764,10 +762,10 @@ nav {
   }
 
   .category-card {
-    width: 100%; /* Ensures full width */
-    min-height: 120px; /* Set fixed minimum height */
+    width: 100%;
+    min-height: 120px;
     padding: 15px;
-    box-sizing: border-box; /* Includes padding in width calculation */
+    box-sizing: border-box; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -777,20 +775,18 @@ nav {
   .category-card h3 {
     margin: 0;
     text-align: center;
-    font-size: 16px; /* Fixed font size */
+    font-size: 16px;
   }
 
   .category-icon {
      font-size: 30px;
-    margin-bottom: 10px; /* Consistent spacing */
+    margin-bottom: 10px;
   }
 }
 
 @media (max-width: 480px) {
-  /* Further adjustments for smaller screens */
-
    .category-card {
-    min-height: 120px; /* Same as above */
+    min-height: 120px;
   }
   
   .hero-content h1 {
@@ -802,7 +798,7 @@ nav {
   }
 
    .hero-image {
-    margin-top: -20px; /* Smaller adjustment for very small screens */
+    margin-top: -20px;
   }
 
   .hero-image img {
@@ -1382,7 +1378,7 @@ nav {
   
   .brand-item img {
     max-width: 100%;
-    max-height: 80px; /* Increased size for mobile */
+    max-height: 80px;
     width: auto;
   }
 }
@@ -1395,12 +1391,12 @@ nav {
   
   .brands-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px; /* Increased gap for better spacing */
+    gap: 25px;
     padding: 25px;
   }
   
   .brand-item img {
-    max-height: 90px; /* Even larger on small phones */
+    max-height: 90px;
   }
 }
 
@@ -1795,7 +1791,6 @@ footer {
 }
 
 /* Responsive adjustments */
-/* Enhanced Responsive Adjustments */
 @media (max-width: 992px) {
   .sidebar {
     width: 200px;
@@ -1815,11 +1810,11 @@ footer {
     position: static;
     margin-top: 20px;
     padding: 15px;
-    order: 2; /* Moves sidebar below products on mobile */
+    order: 2;
   }
 
   .products-section {
-    order: 1; /* Ensures products appear first */
+    order: 1;
     width: 100%;
   }
 
@@ -2129,7 +2124,6 @@ footer {
 
 
 /* About Us Section */
-/* About Page Styles */
 .about-hero {
     background: linear-gradient(rgba(249, 148, 42, 0.7), rgba(249, 148, 42, 0.7)), 
     url('https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
@@ -3160,18 +3154,18 @@ h2 {
   }
 
     .cart-quantity-selector {
-    gap: 4px; /* Reduced gap between buttons */
+    gap: 4px;
   }
 
   .cart-quantity-btn {
-    width: 26px;  /* Smaller buttons */
+    width: 26px; 
     height: 26px;
     font-size: 11px; /* Smaller +/- icons */
   }
 
   .cart-quantity-input {
-    width: 36px;  /* Narrower input */
-    height: 26px; /* Shorter input */
+    width: 36px;
+    height: 26px; 
     font-size: 13px;
     padding: 0 3px;
   }
