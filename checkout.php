@@ -1,6 +1,9 @@
 <?php
 require_once 'includes/db_connect.php';
 session_start();
+// Set the default timezone at the VERY TOP of your file
+date_default_timezone_set('Asia/Kathmandu');
+
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
@@ -56,7 +59,10 @@ foreach ($cart as $item) {
                     </div>
                     <h3>Thank You for Your Order!</h3>
                     <p><?php echo htmlspecialchars($success); ?></p>
-                    <p>Placed at 05:21 PM +0545 on Friday, June 06, 2025. You’ll receive a confirmation email with tracking details soon.</p>
+                     <p>Placed at <?php 
+                $now = new DateTime();
+                echo $now->format('h:i A O \o\n l, F d, Y') . ". You'll receive a confirmation email with tracking details soon.";
+            ?></p>
                     <a href="index.php" class="btn-primary">Continue Shopping</a>
                 </div>
             </div>

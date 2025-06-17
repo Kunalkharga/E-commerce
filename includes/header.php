@@ -60,11 +60,12 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                                 <span class="cart-count"><?php echo $cart_count; ?></span>
                             <?php endif; ?>
                         </a>
-                    </div>
+                    
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <li><a href="<?php echo BASE_URL; ?>user/profile.php"><i class="fas fa-user"></i></a></li>
                         <li><a href="<?php echo BASE_URL; ?>user/logout.php"><i class="fas fa-sign-out-alt"></i></a></li>
                     <?php else: ?>
+                        </div>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle nav-icons">
                                 <i class="fas fa-user"></i>

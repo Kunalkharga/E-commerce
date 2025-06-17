@@ -205,6 +205,11 @@ nav {
   width: 100%;
 }
 
+/* Add this to your CSS if not already present */
+.nav-links i.fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+
 /* Navigation Icons */
 .nav-icons {
   display: flex;
@@ -266,6 +271,7 @@ nav {
     display: flex;
     gap: 15px;
     order: 2;
+    align-items: center;
   }
 
   /* Hamburger menu button */
@@ -282,20 +288,27 @@ nav {
     transition: all 0.3s ease;
   }
 
+   .mobile-icon.cart-icon {
+        position: relative;
+        display: inline-block;
+    }
+
   /* Cart badge styles */
   .mobile-icon .cart-count {
     position: absolute;
-    top: -5px;
-    right: -8px;
+    top: -8px;
+    right: -10px;
     background: #F9942A;
     color: white;
     border-radius: 50%;
-    width: 18px;
-    height: 18px;
-    font-size: 10px;
+    min-width: 16px;
+    height: 16px;
+    font-size: 9px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 4px;
+    box-sizing: border-box;
   }
 
 
@@ -400,6 +413,10 @@ nav {
   .nav-links {
     top: 60px;
     height: calc(100vh - 60px);
+  }
+
+   .navbar {
+    height: 60px; /* Explicitly set navbar height */
   }
   
   .logo-text {
@@ -555,7 +572,7 @@ nav {
 .hero-image img {
   max-width: 100%;
   height: auto;
-  filter: drop-shadow(10px 13px 9px #000000);
+  filter: drop-shadow(7px 1px 9px #000000);
 }
 
 /* Button styles */
@@ -573,6 +590,43 @@ nav {
 .btn:hover {
   background-color: #f0f0f0;
   transform: translateY(-2px);
+}
+
+.custom-shape-divider-bottom-1750144003 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1750144003 svg {
+    position: relative;
+    display: block;
+    width: calc(105% + 1.3px);
+    height: 149px;
+}
+
+.custom-shape-divider-bottom-1750144003 .shape-fill {
+    fill: #F9F9F9;
+}
+
+/** For tablet devices **/
+@media (min-width: 768px) and (max-width: 1023px) {
+    .custom-shape-divider-bottom-1750144003 svg {
+        width: calc(155% + 1.3px);
+        height: 172px;
+    }
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .custom-shape-divider-bottom-1750144003 svg {
+        width: calc(140% + 1.3px);
+        height: 93px;
+    }
 }
 
 /* Categories Section */
@@ -655,8 +709,16 @@ nav {
     font-size: 16px;
   }
 
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin-top: -10px;
+  }
+
   .hero-image img {
-    max-width: 80%;
+    max-width: 60%; 
+    height: auto;
   }
 
   /* Paw prints adjustments */
@@ -668,7 +730,7 @@ nav {
 
   .hero::after {
     font-size: 50px;
-    bottom: 10%;
+    bottom: 13%;
     right: 10%;
   }
 
@@ -702,17 +764,35 @@ nav {
   }
 
   .category-card {
-    max-width: 100%;
+    width: 100%; /* Ensures full width */
+    min-height: 120px; /* Set fixed minimum height */
     padding: 15px;
+    box-sizing: border-box; /* Includes padding in width calculation */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .category-card h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 16px; /* Fixed font size */
   }
 
   .category-icon {
-    font-size: 30px;
+     font-size: 30px;
+    margin-bottom: 10px; /* Consistent spacing */
   }
 }
 
 @media (max-width: 480px) {
   /* Further adjustments for smaller screens */
+
+   .category-card {
+    min-height: 120px; /* Same as above */
+  }
+  
   .hero-content h1 {
     font-size: 28px;
   }
@@ -721,8 +801,12 @@ nav {
     font-size: 14px;
   }
 
+   .hero-image {
+    margin-top: -20px; /* Smaller adjustment for very small screens */
+  }
+
   .hero-image img {
-    max-width: 90%;
+    max-width: 70%;
   }
 
   .btn {
@@ -988,19 +1072,20 @@ nav {
 }
 
 .nav-icons .cart-count {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: #F1642C;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+   position: absolute;
+    top: -5px;
+    right: -8px;
+    background: #F9942A;
+    color: white;
+    border-radius: 50%;
+    min-width: 18px;
+    height: 18px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    box-sizing: border-box;
 }
 
 .cart-table {
