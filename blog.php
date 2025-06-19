@@ -50,7 +50,7 @@
     </div>
 </section>
 
-<!-- Latest Blog Posts -->
+<!-- Latest Blog -->
 <section class="latest-blogs" id="latest-blogs">
     <div class="container">
         <h2 class="section-title">Latest Articles</h2>
