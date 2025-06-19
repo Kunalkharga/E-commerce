@@ -50,6 +50,7 @@
     </div>
 </section>
 
+
 <!-- Latest Blog -->
 <section class="latest-blogs" id="latest-blogs">
     <div class="container">
@@ -74,6 +75,7 @@
                     </div>
                 </div>
             </article>
+
             <!-- Blog Post 4 -->
             <article class="blog-card">
                 <div class="blog-image">
@@ -97,7 +99,7 @@
     </div>
 </section>
 
-<!-- Newsletter Subscription -->
+<!-- Newsletter -->
 <section class="newsletter">
     <div class="container">
         <h2 class="section-title">Stay in the Loop!</h2>
