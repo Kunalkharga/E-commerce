@@ -7,7 +7,6 @@ define('DB_NAME', getenv('DB_NAME'));
 define('BASE_URL', getenv('BASE_URL') ?: 'http://localhost/');
 
 
-
 // <?php
 
 // define('DB_HOST', 'localhost');
