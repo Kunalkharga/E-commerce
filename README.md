@@ -3,7 +3,7 @@
 
 
 A complete e-commerce platform for pet supplies with user authentication, product catalog, shopping cart, and more.
-[Live Demo](https://doggy-ecommerce.onrender.com) 🚀
+[Live Demo](https://dogkart.onrender.com) 🚀
 
 ## Features
 
