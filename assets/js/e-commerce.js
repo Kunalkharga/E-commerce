@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Update subtotal dynamically
       const row = this.closest('tr');
       const price = parseFloat(row.querySelector('td:nth-child(2)').textContent.replace('$', ''));
-      row.querySelector('td:nth-child(4)').textContent = '$' + (price * value).toFixed(2);
+      row.querySelector('td:nth-child(4)').textContent = 'Rs.' + (price * value).toFixed(2);
       // Update total summary (client-side only)
       updateCartTotal();
     });
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const quantity = parseInt(row.querySelector('.cart-quantity-input').value);
       total += price * quantity;
     });
-    document.querySelector('.cart-summary p:last-child').textContent = 'Total Price: $' + total.toFixed(2);
+    document.querySelector('.cart-summary p:last-child').textContent = 'Total Price: Rs.' + total.toFixed(2);
   }
 
   // Initialize total on page load

@@ -36,7 +36,7 @@
                 <ul>
                     <li>Kathmandu, Nepal</li>
                     <li>+977 9845617820</li>
-                    <li><a href="mailto:support@doggy.com">support@doggy.com</a></li>
+                    <li><a href="mailto:support@doggy.com">dogkartcare@gmail.com</a></li>
                 </ul>
             </div>
         </div>
