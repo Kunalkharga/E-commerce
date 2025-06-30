@@ -297,7 +297,7 @@ $pending_orders = $stmt->fetch()['pending'];
                         <tr>
                             <td><?php echo $order['id']; ?></td>
                             <td><?php echo htmlspecialchars($order['username']); ?></td>
-                            <td>$<?php echo number_format($order['total'], 2); ?></td>
+                            <td>Rs.<?php echo number_format($order['total'], ); ?></td>
                             <td><?php echo $order['status']; ?></td>
                             <td>
                                 <form method="POST">

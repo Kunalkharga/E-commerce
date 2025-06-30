@@ -90,16 +90,16 @@ foreach ($cart as $item) {
                                 <?php foreach ($cart as $item): ?>
                                     <tr>
                                         <td><?php echo htmlspecialchars($item['name']); ?></td>
-                                        <td>$<?php echo number_format($item['price'], 2); ?></td>
+                                        <td>Rs.<?php echo number_format($item['price'], ); ?></td>
                                         <td><?php echo $item['quantity']; ?></td>
-                                        <td>$<?php echo number_format($item['price'] * $item['quantity'], 2); ?></td>
+                                        <td>Rs.<?php echo number_format($item['price'] * $item['quantity'], ); ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <td colspan="3"><strong>Total</strong></td>
-                                    <td><strong>$<?php echo number_format($total, 2); ?></strong></td>
+                                    <td><strong>Rs.<?php echo number_format($total, ); ?></strong></td>
                                 </tr>
                             </tfoot>
                         </table>

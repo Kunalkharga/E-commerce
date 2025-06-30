@@ -64,7 +64,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                                         <span><?php echo htmlspecialchars($item['name']); ?></span>
                                     </div>
                                 </td>
-                                <td data-label="Price">$<?php echo number_format($item['price'], 2); ?></td>
+                                <td data-label="Price">Rs.<?php echo number_format($item['price'] ); ?></td>
                                 <td data-label="Quantity">
                                     <div class="cart-quantity-selector">
                                         <button type="button" class="cart-quantity-btn cart-minus"><i
@@ -76,7 +76,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
                                                 class="fas fa-plus"></i></button>
                                     </div>
                                 </td>
-                                <td data-label="Total">$<?php echo number_format($item['price'] * $item['quantity'], 2); ?></td>
+                                <td data-label="Total">Rs.<?php echo number_format($item['price'] * $item['quantity'] ); ?></td>
                                 <td data-label="Actions">
                                     <a href="cart.php?remove=<?php echo $index; ?>" class="cart-remove-item"
                                         onclick="return confirm('Remove this item?');">Remove</a>
@@ -93,7 +93,7 @@ if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
             <div class="cart-summary">
                 <h3>Cart Summary</h3>
                 <p>Total Items: <?php echo $total_items; ?></p>
-                <p>Total Price: $<?php echo number_format($total_price, 2); ?></p>
+                <p>Total Price: Rs.<?php echo number_format($total_price ); ?></p>
             </div>
         <?php endif; ?>
     </div>

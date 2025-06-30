@@ -451,7 +451,7 @@ $pending_orders = $stmt->fetch()['pending'];
                                 <td><?php echo $product['id']; ?></td>
                                 <td><?php echo htmlspecialchars($product['name']); ?></td>
                                 <td><?php echo htmlspecialchars($product['category_name']); ?></td>
-                                <td>$<?php echo number_format($product['price'], 2); ?></td>
+                                <td>Rs.<?php echo number_format($product['price'], ); ?></td>
                                 <td>
                                     <a href="edit_product.php?id=<?php echo $product['id']; ?>">Edit</a>
                                     <a href="delete_product.php?id=<?php echo $product['id']; ?>" onclick="return confirm('Are you sure?');">Delete</a>
@@ -485,7 +485,7 @@ $pending_orders = $stmt->fetch()['pending'];
                             <tr>
                                 <td><?php echo $order['id']; ?></td>
                                 <td><?php echo htmlspecialchars($order['username']); ?></td>
-                                <td>$<?php echo number_format($order['total'], 2); ?></td>
+                                <td>Rs.<?php echo number_format($order['total'], ); ?></td>
                                 <td><?php echo $order['status']; ?></td>
                                 <td>
                                     <form method="POST">

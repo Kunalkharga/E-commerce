@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
       input.value = value;
       // Update subtotal dynamically
       const row = this.closest('tr');
-      const price = parseFloat(row.querySelector('td:nth-child(2)').textContent.replace('$', ''));
+      const price = parseFloat(row.querySelector('td:nth-child(2)').textContent.replace('Rs.', ''));
       row.querySelector('td:nth-child(4)').textContent = 'Rs.' + (price * value).toFixed(2);
       // Update total summary (client-side only)
       updateCartTotal();
@@ -127,12 +127,13 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateCartTotal() {
     let total = 0;
     document.querySelectorAll('.cart-table tbody tr').forEach(row => {
-      const price = parseFloat(row.querySelector('td:nth-child(2)').textContent.replace('$', ''));
-      const quantity = parseInt(row.querySelector('.cart-quantity-input').value);
-      total += price * quantity;
+        const priceText = row.querySelector('td:nth-child(2)').textContent;
+        const price = parseFloat(priceText.replace(/Rs\.|,/g, '')) || 0;
+        const quantity = parseInt(row.querySelector('.cart-quantity-input').value);
+        total += price * quantity;
     });
     document.querySelector('.cart-summary p:last-child').textContent = 'Total Price: Rs.' + total.toFixed(2);
-  }
+}
 
   // Initialize total on page load
   if (document.querySelector('.cart-table')) {
@@ -151,8 +152,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Get product data
         const productId = productCard.dataset.productId || '';
         const productName = productCard.querySelector('.product-name')?.textContent.trim() || '';
-        const productPriceText = productCard.querySelector('.product-price')?.textContent.trim() || '$0';
-        const productPrice = parseFloat(productPriceText.replace(/[^0-9.]/g, '')) || 0;
+        const productPriceText = productCard.querySelector('.product-price')?.textContent.trim() || 'Rs.0';
+        const productPrice = parseFloat(productPriceText.replace(/Rs\.|,/g, '')) || 0;
         const quantity = parseInt(productCard.querySelector('.quantity-input')?.value, 10) || 1;
         const productImage = productCard.querySelector('.product-image')?.src.split('/').pop() || '';
 

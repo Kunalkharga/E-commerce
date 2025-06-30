@@ -31,9 +31,9 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <h3 class="product-name"><?php echo htmlspecialchars($product['name']); ?></h3>
                         <div class="product-price">
-                            $<?php echo number_format($product['price'], 2); ?>
+                            Rs.<?php echo number_format($product['price'], ); ?>
                             <?php if ($product['old_price']): ?>
-                                <span class="old-price">$<?php echo number_format($product['old_price'], 2); ?></span>
+                                <span class="old-price">Rs.<?php echo number_format($product['old_price'], ); ?></span>
                             <?php endif; ?>
                         </div>
                         <div class="quantity-selector">
