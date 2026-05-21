@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
+
     try {
         $stmt = $pdo->prepare("SELECT * FROM admins WHERE email = ?");
         $stmt->execute([$email]);
@@ -52,7 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <i class="fas fa-lock"></i>
             </div>
             <button type="submit" class="btn-submit">Login</button>
-            <a href="register.php" class="btn-register">Register</a>
             
         </form>
     </div>
