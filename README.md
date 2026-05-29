@@ -1,5 +1,5 @@
 # E-commerce Website
-![alt text](assets/images/logo.png)
+
 
 
 A complete e-commerce platform for pet supplies with user authentication, product catalog, shopping cart, and more.
